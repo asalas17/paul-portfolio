@@ -144,7 +144,7 @@ export default function Home() {
 
       <div
         ref={scrollContainerRef}
-        className="flex min-h-dvh flex-col overflow-y-auto overflow-x-hidden px-4 pb-8 pt-28 md:h-dvh md:flex-row md:snap-x md:snap-mandatory md:overflow-x-auto md:overflow-y-hidden md:pb-0 md:px-8 md:[touch-action:pan-x]"
+        className="flex min-h-dvh flex-col overflow-y-auto overflow-x-hidden px-4 pb-8 pt-28 md:h-dvh md:flex-row md:snap-x md:snap-mandatory md:overflow-x-hidden md:overflow-y-hidden md:pb-0 md:px-8 md:[touch-action:pan-x]"
       >
         {/* HERO */}
         <section className="relative flex min-h-[75vh] w-screen shrink-0 items-center justify-center snap-center md:min-h-screen">
