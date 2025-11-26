@@ -360,6 +360,24 @@ export default function Home() {
 
             if (primaryDelta === 0) return;
 
+            const path = event.composedPath();
+            const canScrollVertically = path.some((target) => {
+                if (!(target instanceof HTMLElement)) return false;
+                if (target.dataset.allowVerticalScroll !== "true") return false;
+
+                const { scrollHeight, clientHeight, scrollTop } = target;
+                if (scrollHeight <= clientHeight) return false;
+
+                if (primaryDelta < 0 && scrollTop > 0) return true;
+                if (primaryDelta > 0 && scrollTop + clientHeight < scrollHeight) return true;
+
+                return false;
+            });
+
+            if (Math.abs(event.deltaY) >= Math.abs(event.deltaX) && canScrollVertically) {
+                return;
+            }
+
             event.preventDefault();
             scrollContainer.scrollBy({
                 left: primaryDelta,
@@ -718,12 +736,13 @@ export default function Home() {
     md:items-center
   "
                 >
-                    <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-zinc-800 bg-gradient-to-br from-[#0b0b14] via-[#0c0c1c] to-[#0a0a10] p-6 shadow-[0_0_80px_rgba(99,102,241,0.18)] backdrop-blur-md md:p-10">
+                    <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-zinc-800 bg-gradient-to-br from-[#0b0b14] via-[#0c0c1c] to-[#0a0a10] p-6 shadow-[0_0_80px_rgba(99,102,241,0.18)] backdrop-blur-md md:mt-16 md:max-h-[82vh] md:p-10">
                         <div className="pointer-events-none absolute -left-16 top-6 h-40 w-40 rounded-full bg-purple-600/20 blur-3xl" />
                         <div className="pointer-events-none absolute -right-10 bottom-6 h-32 w-32 rounded-full bg-cyan-500/20 blur-3xl" />
 
                         <div
-                            className="flex flex-col gap-6 md:h-[88vh] md:overflow-y-auto md:pr-3 md:[scrollbar-width:thin] md:[scrollbar-color:rgba(255,255,255,0.15)_transparent] md:[&::-webkit-scrollbar]:w-1.5 md:[&::-webkit-scrollbar-track]:bg-transparent md:[&::-webkit-scrollbar-thumb]:bg-[rgba(255,255,255,0.25)] md:[&::-webkit-scrollbar-thumb]:rounded-full md:hover:[&::-webkit-scrollbar-thumb]:bg-[rgba(255,255,255,0.35)]"
+                            data-allow-vertical-scroll="true"
+                            className="flex flex-col gap-6 md:h-[72vh] md:max-h-[72vh] md:overflow-y-auto md:pr-3 md:[scrollbar-width:thin] md:[scrollbar-color:rgba(255,255,255,0.15)_transparent] md:[&::-webkit-scrollbar]:w-1.5 md:[&::-webkit-scrollbar-track]:bg-transparent md:[&::-webkit-scrollbar-thumb]:bg-[rgba(255,255,255,0.25)] md:[&::-webkit-scrollbar-thumb]:rounded-full md:hover:[&::-webkit-scrollbar-thumb]:bg-[rgba(255,255,255,0.35)]"
                         >
                             <div className="space-y-6">
                                 <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
