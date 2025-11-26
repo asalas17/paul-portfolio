@@ -17,6 +17,98 @@ const sectionVariants = {
     visible: { opacity: 1, y: 0 },
 };
 
+const aboutHighlights = [
+    {
+        title: "Automation Strategy",
+        description: "End-to-end design that keeps humans in the loop while scaling impact.",
+        gradient: "from-purple-500/30 via-fuchsia-500/20 to-sky-400/20",
+        icon: (
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8 text-purple-300"
+            >
+                <path
+                    d="M7 7.5c0-1.38 1.12-2.5 2.5-2.5h5a2.5 2.5 0 0 1 0 5h-5A2.5 2.5 0 0 1 7 7.5Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+                <path
+                    d="M5 13.5C5 12.12 6.12 11 7.5 11H12a2.5 2.5 0 0 1 0 5H7.5A2.5 2.5 0 0 1 5 13.5Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+                <path
+                    d="M14.5 11v-1.25M14.5 18.25V16.5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+            </svg>
+        ),
+    },
+    {
+        title: "Team Enablement",
+        description: "Workshops, playbooks, and documentation that make adoption stick.",
+        gradient: "from-emerald-400/25 via-teal-400/20 to-cyan-300/25",
+        icon: (
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8 text-emerald-300"
+            >
+                <path
+                    d="M8.5 7a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0ZM5 17.5A5.5 5.5 0 0 1 10.5 12h3A5.5 5.5 0 0 1 19 17.5V18a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-.5Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+                <path
+                    d="M4 9.5a2 2 0 1 1 4 0 2 2 0 0 1-4 0Zm12 0a2 2 0 1 1 4 0 2 2 0 0 1-4 0Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+            </svg>
+        ),
+    },
+    {
+        title: "Reliable Delivery",
+        description: "Runbooks, monitoring, and iteration loops that protect outcomes.",
+        gradient: "from-amber-400/25 via-orange-500/15 to-rose-400/20",
+        icon: (
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8 text-amber-200"
+            >
+                <path
+                    d="M6 5h12a1 1 0 0 1 .96 1.27l-1.8 6.3a2 2 0 0 1-1.92 1.43H8.76a2 2 0 0 1-1.92-1.43l-1.8-6.3A1 1 0 0 1 6 5Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+                <path
+                    d="M10.5 17.5a1.5 1.5 0 1 1 3 0v1a1.5 1.5 0 1 1-3 0v-1Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                />
+                <path
+                    d="M9 9h6M9.5 12H12"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+            </svg>
+        ),
+    },
+];
+
 export default function Home() {
     const ready = useClientReady();
     const prefersReducedMotion = useReducedMotion();
@@ -426,29 +518,112 @@ export default function Home() {
     min-h-auto
     items-start
 
-    md:w-screen 
+    md:w-screen
     md:shrink-0
     md:min-h-screen
     md:flex
     md:items-center
   "
                 >
-                    <div className="mx-auto max-w-3xl space-y-4 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 backdrop-blur-md md:p-8">
-                        <h2 className="text-lg font-semibold text-zinc-50">
-                            About Paul
-                        </h2>
-                        <p className="text-sm leading-relaxed text-zinc-300">
-                            I’m an Operations &amp; AI Automation Lead focused on building systems
-                            that make work more human, not less. Clear goals, high standards, and
-                            meaningful outcomes drive how I approach every project.
-                        </p>
-                        <p className="text-sm leading-relaxed text-zinc-300">
-                            Whether I’m designing an automation, integrating APIs, or supporting
-                            cross-functional teams, my goal is always the same: deliver reliable
-                            outcomes and make everyone’s day a little easier. I care deeply about
-                            the people behind the processes and the long-term health of the
-                            systems we build.
-                        </p>
+                    <div className="relative mx-auto max-w-5xl space-y-6 overflow-hidden rounded-3xl border border-zinc-800 bg-gradient-to-br from-[#0b0b14] via-[#0c0c1c] to-[#0a0a10] p-6 shadow-[0_0_80px_rgba(99,102,241,0.18)] backdrop-blur-md md:p-10">
+                        <div className="pointer-events-none absolute -left-16 top-6 h-40 w-40 rounded-full bg-purple-600/20 blur-3xl" />
+                        <div className="pointer-events-none absolute -right-10 bottom-6 h-32 w-32 rounded-full bg-cyan-500/20 blur-3xl" />
+
+                        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                            <div className="space-y-2">
+                                <h2 className="text-xl font-semibold text-zinc-50">
+                                    About Paul
+                                </h2>
+                                <p className="max-w-3xl text-sm leading-relaxed text-zinc-300">
+                                    I’m an Operations &amp; AI Automation Lead focused on building systems that make work more human, not less. Clear goals, high standards, and meaningful outcomes guide every collaboration.
+                                </p>
+                            </div>
+                            <motion.div
+                                whileHover={{ scale: 1.03 }}
+                                transition={{ type: "spring", stiffness: 220, damping: 12 }}
+                                className="relative inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-500/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.08em] text-purple-100"
+                            >
+                                <span className="flex h-2 w-2 rounded-full bg-purple-300 shadow-[0_0_0_6px_rgba(168,85,247,0.35)]" />
+                                Building calm, reliable systems
+                            </motion.div>
+                        </div>
+
+                        <div className="grid gap-4 md:grid-cols-2">
+                            <div className="space-y-3 rounded-2xl border border-zinc-800/70 bg-zinc-900/40 p-4 shadow-inner">
+                                <h3 className="text-sm font-semibold text-zinc-100">What motivates me</h3>
+                                <p className="text-sm leading-relaxed text-zinc-300">
+                                    Whether I’m designing automations, integrating APIs, or supporting cross-functional teams, my goal is to deliver reliable outcomes and make everyone’s day a little easier. I prioritize the people behind the processes and the long-term health of the systems we build.
+                                </p>
+                                <div className="flex flex-wrap gap-2 text-[11px] text-zinc-200">
+                                    <span className="rounded-full bg-purple-500/15 px-3 py-1 font-medium text-purple-100">Human-centered</span>
+                                    <span className="rounded-full bg-emerald-500/15 px-3 py-1 font-medium text-emerald-100">Impact-first</span>
+                                    <span className="rounded-full bg-cyan-500/15 px-3 py-1 font-medium text-cyan-100">Documented</span>
+                                    <span className="rounded-full bg-amber-500/15 px-3 py-1 font-medium text-amber-100">Measurable</span>
+                                </div>
+                            </div>
+
+                            <div className="relative overflow-hidden rounded-2xl border border-zinc-800/70 bg-gradient-to-br from-indigo-500/10 via-sky-500/10 to-emerald-400/10 p-4">
+                                <div className="absolute -right-8 -top-10 h-24 w-24 rounded-full bg-sky-500/20 blur-2xl" />
+                                <div className="absolute -left-10 bottom-0 h-24 w-24 rounded-full bg-emerald-400/20 blur-2xl" />
+                                <div className="relative space-y-2">
+                                    <h3 className="text-sm font-semibold text-zinc-100">How I work</h3>
+                                    <ul className="space-y-2 text-sm text-zinc-300">
+                                        <li className="flex items-start gap-2">
+                                            <span className="mt-1 h-2 w-2 rounded-full bg-purple-300" />
+                                            Design clarity, then automate what matters.
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="mt-1 h-2 w-2 rounded-full bg-emerald-300" />
+                                            Pair fast experiments with strong QA and monitoring.
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="mt-1 h-2 w-2 rounded-full bg-amber-300" />
+                                            Leave teams with playbooks, runbooks, and clear ownership.
+                                        </li>
+                                    </ul>
+                                    <motion.div
+                                        animate={{ y: [0, -6, 0] }}
+                                        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                                        className="mt-3 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-100"
+                                    >
+                                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
+                                        Ops leader who keeps experimentation safe
+                                    </motion.div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="grid gap-4 md:grid-cols-3">
+                            {aboutHighlights.map((item, index) => (
+                                <motion.div
+                                    key={item.title}
+                                    whileHover={{ y: -6, scale: 1.01 }}
+                                    transition={{ type: "spring", stiffness: 200, damping: 12 }}
+                                    className="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900/50 p-4"
+                                    style={{
+                                        boxShadow: "0 10px 40px rgba(0,0,0,0.35)",
+                                    }}
+                                >
+                                    <div className={`absolute inset-0 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100 bg-gradient-to-br ${item.gradient}`} />
+                                    <div className="relative flex items-start gap-3">
+                                        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-zinc-700/70 bg-zinc-900/70 shadow-inner">
+                                            {item.icon}
+                                        </div>
+                                        <div className="space-y-1">
+                                            <h3 className="text-sm font-semibold text-zinc-100">{item.title}</h3>
+                                            <p className="text-xs leading-relaxed text-zinc-300">{item.description}</p>
+                                        </div>
+                                    </div>
+                                    <motion.div
+                                        className="mt-4 h-1 rounded-full bg-gradient-to-r from-purple-400/80 via-cyan-400/80 to-emerald-400/80"
+                                        initial={{ scaleX: 0, originX: 0 }}
+                                        whileInView={{ scaleX: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.1 * index + 0.1, duration: 0.5 }}
+                                    />
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
                 </motion.section>
 
