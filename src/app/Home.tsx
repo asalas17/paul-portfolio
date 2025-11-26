@@ -368,8 +368,12 @@ export default function Home() {
                 const { scrollHeight, clientHeight, scrollTop } = target;
                 if (scrollHeight <= clientHeight) return false;
 
-                if (primaryDelta < 0 && scrollTop > 0) return true;
-                if (primaryDelta > 0 && scrollTop + clientHeight < scrollHeight) return true;
+                const edgeTolerance = 2;
+                const isAtTop = scrollTop <= edgeTolerance;
+                const isAtBottom = scrollTop + clientHeight >= scrollHeight - edgeTolerance;
+
+                if (primaryDelta < 0 && !isAtTop) return true;
+                if (primaryDelta > 0 && !isAtBottom) return true;
 
                 return false;
             });
