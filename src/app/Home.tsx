@@ -668,88 +668,94 @@ export default function Home() {
     md:items-center
   "
                 >
-                    <div className="mx-auto flex w-full max-w-3xl flex-col space-y-4 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 text-sm text-zinc-300 backdrop-blur-md md:p-8">
-                        <h2 className="text-lg font-semibold text-zinc-50">
-                            Let&apos;s build what&apos;s next
-                        </h2>
-                        <p>
-                            If you&apos;re looking to scale your operations, reduce manual
-                            workload, or explore how AI and automation can support your team, I&apos;d
-                            love to connect.
-                        </p>
-                        <div className="space-y-2">
-                            <p>
-                                <span className="text-zinc-400">Email:</span>{" "}
-                                <a
-                                    href="mailto:paulcohen10000@gmail.com"
-                                    className="text-purple-300 hover:text-purple-200"
-                                >
-                                    paulcohen10000@gmail.com
-                                </a>
-                            </p>
-                            <p>
-                                <span className="text-zinc-400">LinkedIn:</span>{" "}
-                                <a
-                                    href="https://www.linkedin.com/in/pjcohen/"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="text-purple-300 hover:text-purple-200"
-                                >
-                                    linkedin.com/in/pjcohen
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </motion.section>
+                    <div className="mx-auto w-full max-w-5xl overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 text-sm text-zinc-300 backdrop-blur-md md:p-10">
+                        <div className="grid gap-6 md:grid-cols-[1.4fr,1fr] md:items-start">
+                            <div className="space-y-5">
+                                <div className="flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-purple-200/90">
+                                    <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_0_6px_rgba(16,185,129,0.12)]" />
+                                    <span>Ready to collaborate</span>
+                                </div>
+                                <div className="space-y-3">
+                                    <h2 className="text-xl font-semibold text-zinc-50 md:text-2xl">
+                                        Let&apos;s build what&apos;s next
+                                    </h2>
+                                    <p className="leading-relaxed text-zinc-200">
+                                        Scaling ops, reducing manual work, or experimenting with AI? Let&apos;s talk through the problem and map the quickest way to ship something dependable.
+                                    </p>
+                                </div>
+                                <div className="grid gap-3 sm:grid-cols-2">
+                                    <a
+                                        href="mailto:paulcohen10000@gmail.com"
+                                        className="group flex items-center justify-between gap-3 rounded-2xl border border-purple-400/50 bg-purple-500/15 px-4 py-3 font-medium text-purple-100 shadow-[0_10px_40px_rgba(147,51,234,0.15)] transition hover:-translate-y-[2px] hover:border-purple-300 hover:bg-purple-500/20"
+                                    >
+                                        <span>Email me</span>
+                                        <span className="text-lg transition group-hover:translate-x-1">→</span>
+                                    </a>
+                                    <a
+                                        href="https://www.linkedin.com/in/pjcohen/"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="group flex items-center justify-between gap-3 rounded-2xl border border-zinc-700 bg-zinc-800/60 px-4 py-3 font-medium text-zinc-100 transition hover:-translate-y-[2px] hover:border-zinc-500 hover:bg-zinc-800"
+                                    >
+                                        <span>Connect on LinkedIn</span>
+                                        <span className="text-lg transition group-hover:translate-x-1">→</span>
+                                    </a>
+                                </div>
+                                <div className="grid gap-2 text-zinc-200 sm:grid-cols-2">
+                                    <div className="rounded-2xl border border-zinc-800/60 bg-zinc-900/80 p-4">
+                                        <p className="text-xs uppercase tracking-[0.15em] text-zinc-500">Projects I love</p>
+                                        <p className="mt-2 text-sm font-semibold text-zinc-50">Marketing + CS automations</p>
+                                        <p className="text-sm text-zinc-300">Playbooks that nudge leads and customers without losing the human touch.</p>
+                                    </div>
+                                    <div className="rounded-2xl border border-zinc-800/60 bg-zinc-900/80 p-4">
+                                        <p className="text-xs uppercase tracking-[0.15em] text-zinc-500">How I work</p>
+                                        <p className="mt-2 text-sm font-semibold text-zinc-50">Discovery → pilot → scale</p>
+                                        <p className="text-sm text-zinc-300">Fast iterations with guardrails, documentation, and clear owners baked in.</p>
+                                    </div>
+                                </div>
+                            </div>
 
-                <motion.section
-                    variants={sectionVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="
-    w-full
-    snap-center
-    min-h-auto
-    items-start
-
-    md:w-screen
-    md:shrink-0
-    md:min-h-screen
-    md:flex
-    md:items-center
-  "
-                >
-                    <div className="mx-auto flex w-full max-w-3xl flex-col gap-3 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 text-sm text-zinc-300 backdrop-blur-md md:p-8">
-                        <h2 className="text-lg font-semibold text-zinc-50">
-                            Want to know more?
-                        </h2>
-                        <p>
-                            Keep scrolling to see how I build automation strategies, lead teams, and ship dependable workflows across industries.
-                        </p>
-                        <div className="flex flex-wrap gap-3">
-                            <a
-                                href="#about"
-                                onClick={(event) => handleNavClick(event, "about")}
-                                className="rounded-full border border-zinc-700 bg-zinc-800/50 px-4 py-2 text-xs font-medium text-zinc-100 hover:border-zinc-600 hover:bg-zinc-800"
-                            >
-                                About &amp; Skills
-                            </a>
-                            <a
-                                href="#experience"
-                                onClick={(event) => handleNavClick(event, "experience")}
-                                className="rounded-full border border-zinc-700 bg-zinc-800/50 px-4 py-2 text-xs font-medium text-zinc-100 hover:border-zinc-600 hover:bg-zinc-800"
-                            >
-                                Experience
-                            </a>
-                            <a
-                                href="#projects"
-                                onClick={(event) => handleNavClick(event, "projects")}
-                                className="rounded-full border border-zinc-700 bg-zinc-800/50 px-4 py-2 text-xs font-medium text-zinc-100 hover:border-zinc-600 hover:bg-zinc-800"
-                            >
-                                Projects
-                            </a>
+                            <div className="flex flex-col gap-4 rounded-2xl border border-zinc-800/70 bg-gradient-to-b from-zinc-900/80 via-zinc-900/70 to-zinc-900/50 p-5">
+                                <div className="flex items-center justify-between">
+                                    <p className="text-sm font-semibold text-zinc-100">
+                                        Want to know more?
+                                    </p>
+                                    <span className="text-lg text-purple-200">→</span>
+                                </div>
+                                <p className="text-sm text-zinc-300">
+                                    Jump to the highlights to see my approach, leadership style, and hands-on projects.
+                                </p>
+                                <div className="flex flex-wrap gap-2">
+                                    <a
+                                        href="#about"
+                                        onClick={(event) => handleNavClick(event, "about")}
+                                        className="group flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800/70 px-4 py-2 text-xs font-medium text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-800"
+                                    >
+                                        About &amp; Skills
+                                        <span className="transition group-hover:translate-x-0.5">→</span>
+                                    </a>
+                                    <a
+                                        href="#experience"
+                                        onClick={(event) => handleNavClick(event, "experience")}
+                                        className="group flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800/70 px-4 py-2 text-xs font-medium text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-800"
+                                    >
+                                        Experience
+                                        <span className="transition group-hover:translate-x-0.5">→</span>
+                                    </a>
+                                    <a
+                                        href="#projects"
+                                        onClick={(event) => handleNavClick(event, "projects")}
+                                        className="group flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-800/70 px-4 py-2 text-xs font-medium text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-800"
+                                    >
+                                        Projects
+                                        <span className="transition group-hover:translate-x-0.5">→</span>
+                                    </a>
+                                </div>
+                                <div className="rounded-2xl border border-zinc-800/60 bg-zinc-900/70 p-4 text-xs text-zinc-400">
+                                    <p className="font-semibold text-zinc-200">Prefer a quick intro?</p>
+                                    <p>Tell me what you&apos;re trying to automate and I&apos;ll reply within a day with next steps.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </motion.section>
