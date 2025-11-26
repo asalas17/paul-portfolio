@@ -1076,7 +1076,6 @@ export default function Home() {
                                         <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(circle at 20% 20%, rgba(168,85,247,0.12), transparent 40%), radial-gradient(circle at 80% 20%, rgba(56,189,248,0.12), transparent 35%)" }} />
                                         <div className="relative flex flex-wrap items-start justify-between gap-3">
                                             <div>
-                                                <div className="absolute -left-[9px] top-2 h-4 w-4 rounded-full border border-purple-300 bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.9)]" />
                                                 <h3 className="text-sm font-semibold text-zinc-50">
                                                     Operations &amp; AI Automation Lead
                                                 </h3>
@@ -1117,7 +1116,6 @@ export default function Home() {
                                         <div className="absolute inset-0 opacity-0 transition duration-500 group-hover:opacity-100" style={{ background: "radial-gradient(circle at 20% 20%, rgba(168,85,247,0.12), transparent 40%), radial-gradient(circle at 80% 20%, rgba(56,189,248,0.12), transparent 35%)" }} />
                                         <div className="relative flex flex-wrap items-start justify-between gap-3">
                                             <div>
-                                                <div className="absolute -left-[9px] top-2 h-4 w-4 rounded-full border border-indigo-300 bg-zinc-900" />
                                                 <h3 className="text-sm font-semibold text-zinc-50">
                                                     CS Operations
                                                 </h3>
