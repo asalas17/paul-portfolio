@@ -17,6 +17,22 @@ const sectionVariants = {
     visible: { opacity: 1, y: 0 },
 };
 
+const scrollableSectionClasses = `
+    md:max-h-screen
+    md:overflow-y-auto
+    md:pr-4
+    md:[touch-action:pan-y]
+    md:[scrollbar-width:thin]
+    md:[scrollbar-color:rgba(255,255,255,0.15)_transparent]
+    md:[&::-webkit-scrollbar]:w-1.5
+    md:[&::-webkit-scrollbar-track]:bg-transparent
+    md:[&::-webkit-scrollbar-thumb]:bg-[rgba(255,255,255,0.25)]
+    md:[&::-webkit-scrollbar-thumb]:rounded-full
+    md:[&::-webkit-scrollbar-thumb]:transition-all
+    md:[&::-webkit-scrollbar-thumb]:duration-300
+    md:hover:[&::-webkit-scrollbar-thumb]:bg-[rgba(255,255,255,0.35)]
+`;
+
 const aboutHighlights = [
     {
         title: "Automation Strategy",
@@ -575,18 +591,19 @@ export default function Home() {
                 {/* HERO */}
                 <section
                     id="hero"
-                    className="
+                    className={`
     min-h-[75vh]
     w-full
     snap-center
     flex items-start        /* mobile */
 
-    md:w-screen 
+    md:w-screen
     md:shrink-0
     md:min-h-screen
-    md:flex 
+    md:flex
     md:items-center         /* desktop → centra perfecto */
-  "
+    ${scrollableSectionClasses}
+  `}
                 >
 
                     {ready && (
@@ -705,7 +722,7 @@ export default function Home() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="
+                    className={`
     w-full
     snap-center
     min-h-auto
@@ -716,7 +733,8 @@ export default function Home() {
     md:min-h-screen
     md:flex
     md:items-center
-  "
+    ${scrollableSectionClasses}
+  `}
                 >
                     <div className="relative mx-auto max-w-5xl space-y-6 overflow-hidden rounded-3xl border border-zinc-800 bg-gradient-to-br from-[#0b0b14] via-[#0c0c1c] to-[#0a0a10] p-6 shadow-[0_0_80px_rgba(99,102,241,0.18)] backdrop-blur-md md:p-10">
                         <div className="pointer-events-none absolute -left-16 top-6 h-40 w-40 rounded-full bg-purple-600/20 blur-3xl" />
@@ -827,7 +845,7 @@ export default function Home() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="
+                    className={`
     w-full
     snap-center
     min-h-auto
@@ -838,7 +856,8 @@ export default function Home() {
     md:min-h-screen
     md:flex
     md:items-center
-  "
+    ${scrollableSectionClasses}
+  `}
                 >
                     <div className="relative mx-auto max-w-5xl space-y-6 overflow-hidden rounded-3xl border border-zinc-800 bg-gradient-to-br from-[#0b0b14] via-[#0c0c1c] to-[#0a0a10] p-6 shadow-[0_0_80px_rgba(99,102,241,0.18)] backdrop-blur-md md:p-10">
                         <div className="pointer-events-none absolute -left-14 top-4 h-40 w-40 rounded-full bg-purple-600/20 blur-3xl" />
@@ -973,18 +992,19 @@ export default function Home() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="
+                    className={`
     w-full
     snap-center
     min-h-auto
     items-start
 
-    md:w-screen 
+    md:w-screen
     md:shrink-0
     md:min-h-screen
     md:flex
     md:items-center
-  "
+    ${scrollableSectionClasses}
+  `}
                 >
                     <div className="mx-auto flex w-full max-w-4xl flex-col gap-6 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 backdrop-blur-md md:p-8">
                         <h2 className="text-lg font-semibold text-zinc-50">
@@ -1081,18 +1101,19 @@ export default function Home() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="
+                    className={`
     w-full
     snap-center
     min-h-auto
     items-start
 
-    md:w-screen 
+    md:w-screen
     md:shrink-0
     md:min-h-screen
     md:flex
     md:items-center
-  "
+    ${scrollableSectionClasses}
+  `}
                 >
                     <div className="mx-auto flex w-full max-w-4xl flex-col gap-4 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 backdrop-blur-md md:p-8">
                         <h2 className="text-lg font-semibold text-zinc-50">
@@ -1142,18 +1163,19 @@ export default function Home() {
                     whileInView="visible"
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="
+                    className={`
     w-full
     snap-center
     min-h-auto
     items-start
 
-    md:w-screen 
+    md:w-screen
     md:shrink-0
     md:min-h-screen
     md:flex
     md:items-center
-  "
+    ${scrollableSectionClasses}
+  `}
                 >
                     <div className="mx-auto flex w-full max-w-3xl flex-col space-y-4 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 text-sm text-zinc-300 backdrop-blur-md md:p-8">
                         <h2 className="text-lg font-semibold text-zinc-50">
