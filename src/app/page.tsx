@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useMotionValue, useTransform } from "framer-motion";
+import { motion, useMotionValue, useReducedMotion, useTransform } from "framer-motion";
 import React, { useEffect } from "react";
 import CustomCursor from "./components/CustomCursor";
 
@@ -16,10 +16,15 @@ const sectionVariants = {
 };
 
 export default function Home() {
+  const prefersReducedMotion = useReducedMotion();
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
 
   useEffect(() => {
+    if (prefersReducedMotion) {
+      return undefined;
+    }
+
     const handleMouseMove = (event: MouseEvent) => {
       mouseX.set(event.clientX / window.innerWidth);
       mouseY.set(event.clientY / window.innerHeight);
@@ -27,7 +32,7 @@ export default function Home() {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
+  }, [mouseX, mouseY, prefersReducedMotion]);
 
   const layer1X = useTransform(mouseX, (value) => (value - 0.5) * 60);
   const layer1Y = useTransform(mouseY, (value) => (value - 0.5) * 40);

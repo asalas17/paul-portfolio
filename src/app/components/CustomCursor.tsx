@@ -1,16 +1,18 @@
 "use client";
 
+import { useReducedMotion } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const ACTIVE_CLASS = "cursor-ring--active";
 
 export default function CustomCursor() {
+  const prefersReducedMotion = useReducedMotion();
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
   const animationFrame = useRef<number>();
 
   useEffect(() => {
-    if (!window.matchMedia("(pointer: fine)").matches) {
+    if (prefersReducedMotion || !window.matchMedia("(pointer: fine)").matches) {
       return undefined;
     }
 
@@ -68,7 +70,11 @@ export default function CustomCursor() {
         cancelAnimationFrame(animationFrame.current);
       }
     };
-  }, []);
+  }, [prefersReducedMotion]);
+
+  if (prefersReducedMotion) {
+    return null;
+  }
 
   return (
     <>
