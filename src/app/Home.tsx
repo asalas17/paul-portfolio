@@ -688,7 +688,32 @@ export default function Home() {
                                         href="mailto:paulcohen10000@gmail.com"
                                         className="group flex items-center justify-between gap-3 rounded-2xl border border-purple-400/50 bg-purple-500/15 px-4 py-3 font-medium text-purple-100 shadow-[0_10px_40px_rgba(147,51,234,0.15)] transition hover:-translate-y-[2px] hover:border-purple-300 hover:bg-purple-500/20"
                                     >
-                                        <span>Email me</span>
+                                        <span className="flex items-center gap-2">
+                                            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-purple-400/20 text-purple-100 shadow-[0_12px_30px_rgba(147,51,234,0.25)]">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24"
+                                                    fill="none"
+                                                    className="h-5 w-5"
+                                                >
+                                                    <path
+                                                        d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5v-9Z"
+                                                        stroke="currentColor"
+                                                        strokeWidth="1.6"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                    <path
+                                                        d="M6.5 8.5 12 12l5.5-3.5"
+                                                        stroke="currentColor"
+                                                        strokeWidth="1.6"
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                    />
+                                                </svg>
+                                            </span>
+                                            <span>Email me</span>
+                                        </span>
                                         <span className="text-lg transition group-hover:translate-x-1">→</span>
                                     </a>
                                     <a
@@ -697,7 +722,32 @@ export default function Home() {
                                         rel="noreferrer"
                                         className="group flex items-center justify-between gap-3 rounded-2xl border border-zinc-700 bg-zinc-800/60 px-4 py-3 font-medium text-zinc-100 transition hover:-translate-y-[2px] hover:border-zinc-500 hover:bg-zinc-800"
                                     >
-                                        <span>Connect on LinkedIn</span>
+                                        <span className="flex items-center gap-2">
+                                            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-zinc-700/40 text-zinc-50 shadow-[0_12px_30px_rgba(255,255,255,0.08)]">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    viewBox="0 0 24 24"
+                                                    fill="currentColor"
+                                                    className="h-5 w-5"
+                                                >
+                                                    <rect x="3" y="3" width="18" height="18" rx="4" className="fill-current" />
+                                                    <path
+                                                        d="M8.25 9.75v7.5"
+                                                        stroke="#0A66C2"
+                                                        strokeWidth="1.8"
+                                                        strokeLinecap="round"
+                                                    />
+                                                    <circle cx="8.25" cy="6.75" r="1.05" fill="#0A66C2" />
+                                                    <path
+                                                        d="M12.5 17.25v-4.25c0-.97.78-1.75 1.75-1.75v0c.97 0 1.75.78 1.75 1.75v4.25"
+                                                        stroke="#0A66C2"
+                                                        strokeWidth="1.8"
+                                                        strokeLinecap="round"
+                                                    />
+                                                </svg>
+                                            </span>
+                                            <span>Connect on LinkedIn</span>
+                                        </span>
                                         <span className="text-lg transition group-hover:translate-x-1">→</span>
                                     </a>
                                 </div>
