@@ -109,6 +109,199 @@ const aboutHighlights = [
     },
 ];
 
+const skillHighlights = [
+    {
+        title: "Automation Architecture",
+        description: "Design orchestration, branching logic, and error handling so workflows stay resilient.",
+        gradient: "from-purple-500/25 via-fuchsia-500/15 to-sky-400/20",
+        icon: (
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8 text-purple-200"
+            >
+                <circle cx="7" cy="7" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+                <circle cx="17" cy="7" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+                <circle cx="12" cy="17" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+                <path
+                    d="M9.4 8.4 10 10m5-2 1.2 2.6M12 14.5V12"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+            </svg>
+        ),
+    },
+    {
+        title: "Data & Messaging Flows",
+        description: "Connect CRMs, payments, and messaging platforms with clean handoffs between teams.",
+        gradient: "from-emerald-400/25 via-teal-400/20 to-cyan-300/20",
+        icon: (
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8 text-emerald-200"
+            >
+                <path
+                    d="M7 6h10a2 2 0 0 1 2 2v1.5a2 2 0 0 1-2 2H7A2 2 0 0 1 5 9.5V8a2 2 0 0 1 2-2Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+                <path
+                    d="M7 14h4.5a2.5 2.5 0 0 1 0 5H7a2 2 0 0 1-2-2v-1a2 2 0 0 1 2-2Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+                <path
+                    d="m12 9.5 2 1.5 2-1.5M11.5 16h5"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+            </svg>
+        ),
+    },
+    {
+        title: "Guardrails & QA",
+        description: "Monitoring, fallbacks, and documentation so automations stay trusted and transparent.",
+        gradient: "from-amber-400/25 via-orange-500/20 to-rose-400/20",
+        icon: (
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-8 w-8 text-amber-100"
+            >
+                <path
+                    d="M6.5 7.5a5.5 5.5 0 0 1 11 0v2.8a7 7 0 0 1-3.9 6.3l-1.6.8a.5.5 0 0 1-.5 0l-1.6-.8A7 7 0 0 1 6.5 10.3V7.5Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                />
+                <path
+                    d="M12 8.5v3M12 14.5h.01"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+            </svg>
+        ),
+    },
+];
+
+const toolIcons = [
+    {
+        name: "n8n",
+        description: "Visual orchestration for multi-step workflows.",
+        gradient: "from-orange-500/25 to-pink-500/25",
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-orange-200">
+                <circle cx="7" cy="12" r="2.25" stroke="currentColor" strokeWidth="1.5" />
+                <circle cx="17" cy="7" r="2.25" stroke="currentColor" strokeWidth="1.5" />
+                <circle cx="17" cy="17" r="2.25" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M9.2 11.3 14.8 8.2M9.2 12.7l5.6 3.1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+        ),
+    },
+    {
+        name: "Zapier",
+        description: "Fast automations that connect scattered tools.",
+        gradient: "from-amber-500/25 to-red-500/25",
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-amber-100">
+                <path
+                    d="M12 4.5v3m0 9v3m7.5-7.5h-3m-9 0h-3m11.1-4.1-2.2 2.2m-4.4 4.4-2.2 2.2m8.8 0-2.2-2.2m-4.4-4.4-2.2-2.2"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+                <circle cx="12" cy="12" r="2.3" stroke="currentColor" strokeWidth="1.5" />
+            </svg>
+        ),
+    },
+    {
+        name: "Make.com",
+        description: "Complex branching, variables, and scheduling.",
+        gradient: "from-fuchsia-500/25 to-indigo-500/25",
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-fuchsia-100">
+                <rect x="5" y="5" width="3" height="14" rx="1" fill="currentColor" />
+                <rect x="10.5" y="5" width="3" height="14" rx="1" fill="currentColor" />
+                <rect x="16" y="5" width="3" height="14" rx="1" fill="currentColor" />
+            </svg>
+        ),
+    },
+    {
+        name: "Slack & Twilio",
+        description: "Messaging hooks for alerts, nudges, and follow-ups.",
+        gradient: "from-cyan-400/25 to-emerald-400/25",
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-cyan-100">
+                <path
+                    d="M7 11a3 3 0 1 1 6 0v1.25A2.75 2.75 0 0 0 15.75 15H17a3 3 0 1 1-3 3v-1.25A2.75 2.75 0 0 0 11.25 14H10a3 3 0 1 1-3-3Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+                <circle cx="17" cy="8" r="1" fill="currentColor" />
+                <circle cx="7" cy="16" r="1" fill="currentColor" />
+            </svg>
+        ),
+    },
+    {
+        name: "Stripe & Brex",
+        description: "Revenue, finance, and approvals tied to workflows.",
+        gradient: "from-sky-400/25 to-purple-400/25",
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-sky-100">
+                <path
+                    d="M7.5 8.5c0-1.66 1.4-3 3.13-3h2.74c1.73 0 3.13 1.34 3.13 3 0 1.66-1.4 3-3.13 3H10.7c-1.73 0-3.2 1.34-3.2 3s1.47 3 3.2 3h2.6c1.83 0 3.3-1.34 3.3-3"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                />
+                <path d="M12 5.5v13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+        ),
+    },
+    {
+        name: "Airtable & Notion",
+        description: "Lightweight databases and documentation that stay in sync.",
+        gradient: "from-amber-300/25 to-emerald-300/25",
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-emerald-100">
+                <path
+                    d="M6 7.5 12 5l6 2.5v9L12 19l-6-2.5v-9Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinejoin="round"
+                />
+                <path d="M9 9.5 15 12l-6 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                <path d="M9 14.5V9.5l6-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+        ),
+    },
+    {
+        name: "OpenAI & AI Video",
+        description: "Creative assets, summaries, and assistants backed by guardrails.",
+        gradient: "from-indigo-400/25 to-rose-400/25",
+        icon: (
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-rose-100">
+                <path
+                    d="M12 5.5a6.5 6.5 0 0 1 0 13 6.5 6.5 0 0 1 0-13Z"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                />
+                <path d="M7.5 9.5a6 6 0 0 0 9 0m-9 5a6 6 0 0 1 9 0" stroke="currentColor" strokeWidth="1.5" />
+                <path d="M12 7v10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+            </svg>
+        ),
+    },
+];
+
 export default function Home() {
     const ready = useClientReady();
     const prefersReducedMotion = useReducedMotion();
@@ -184,7 +377,7 @@ export default function Home() {
     }, [ready]); // 👈 AHORA SE ACTIVA SOLO CUANDO ready = true
 
 
-    const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    const handleNavClick = (event: React.MouseEvent<HTMLElement>, id: string) => {
         event.preventDefault();
         document.getElementById(id)?.scrollIntoView({
             behavior: "smooth",
@@ -216,7 +409,7 @@ export default function Home() {
                 style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}
             >
                 <span
-                    onClick={(e) => handleNavClick(e as any, "hero")}
+                    onClick={(event) => handleNavClick(event, "hero")}
                     className="hidden text-sm uppercase tracking-[0.2em] text-zinc-400 hover:text-zinc-200 transition cursor-pointer md:inline"
                 >
                     Paul Cohen
@@ -640,39 +833,134 @@ export default function Home() {
     min-h-auto
     items-start
 
-    md:w-screen 
+    md:w-screen
     md:shrink-0
     md:min-h-screen
     md:flex
     md:items-center
   "
                 >
-                    <div className="mx-auto flex w-full max-w-4xl flex-col space-y-4 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 backdrop-blur-md md:p-8">
-                        <div className="flex flex-wrap items-center justify-between gap-4">
-                            <h2 className="text-lg font-semibold text-zinc-50">
-                                Core Skills
-                            </h2>
-                            <p className="text-xs text-zinc-400">
-                                Operations · Automation · AI · Customer Experience
-                            </p>
+                    <div className="relative mx-auto max-w-5xl space-y-6 overflow-hidden rounded-3xl border border-zinc-800 bg-gradient-to-br from-[#0b0b14] via-[#0c0c1c] to-[#0a0a10] p-6 shadow-[0_0_80px_rgba(99,102,241,0.18)] backdrop-blur-md md:p-10">
+                        <div className="pointer-events-none absolute -left-14 top-4 h-40 w-40 rounded-full bg-purple-600/20 blur-3xl" />
+                        <div className="pointer-events-none absolute -right-10 bottom-6 h-32 w-32 rounded-full bg-emerald-500/20 blur-3xl" />
+
+                        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                            <div className="space-y-2">
+                                <h2 className="text-xl font-semibold text-zinc-50">
+                                    Skills &amp; Tools
+                                </h2>
+                                <p className="max-w-3xl text-sm leading-relaxed text-zinc-300">
+                                    Systems thinking meets hands-on execution. I design automation stacks, connect the data, and keep the guardrails in place so teams can ship confidently.
+                                </p>
+                            </div>
+                            <motion.div
+                                whileHover={{ scale: 1.03 }}
+                                transition={{ type: "spring", stiffness: 220, damping: 12 }}
+                                className="relative inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-500/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.08em] text-sky-100"
+                            >
+                                <span className="flex h-2 w-2 rounded-full bg-sky-300 shadow-[0_0_0_6px_rgba(56,189,248,0.35)]" />
+                                Automation-first, human-centered
+                            </motion.div>
                         </div>
-                        <div className="grid gap-3 md:grid-cols-3">
-                            {["n8n, Zapier, Make.com",
-                                "API Integrations & Webhooks",
-                                "Twilio & Slack Integrations",
-                                "Stripe & Brex Automations",
-                                "Workflow Automation Design",
-                                "Customer Success Operations",
-                                "Process Improvement",
-                                "AI Video & Creative Automation",
-                                "Cross-Team Collaboration",
-                            ].map((skill) => (
-                                <MagneticHover key={skill} className="inline-block">
-                                    <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 px-4 py-3 text-sm text-zinc-200">
-                                        {skill}
+
+                        <div className="grid gap-4 md:grid-cols-2">
+                            <div className="space-y-3 rounded-2xl border border-zinc-800/70 bg-zinc-900/50 p-4 shadow-inner">
+                                <h3 className="text-sm font-semibold text-zinc-100">What I build</h3>
+                                <p className="text-sm leading-relaxed text-zinc-300">
+                                    Workflow architectures that blend no-code and code, keeping data accurate across CRMs, finance, and messaging tools. Every flow ships with clear ownership and documented handoffs.
+                                </p>
+                                <div className="flex flex-wrap gap-2 text-[11px] text-zinc-200">
+                                    <span className="rounded-full bg-purple-500/15 px-3 py-1 font-medium text-purple-100">Orchestrations</span>
+                                    <span className="rounded-full bg-emerald-500/15 px-3 py-1 font-medium text-emerald-100">APIs &amp; Webhooks</span>
+                                    <span className="rounded-full bg-sky-500/15 px-3 py-1 font-medium text-sky-100">Messaging</span>
+                                    <span className="rounded-full bg-amber-500/15 px-3 py-1 font-medium text-amber-100">Analytics</span>
+                                </div>
+                            </div>
+
+                            <div className="relative overflow-hidden rounded-2xl border border-zinc-800/70 bg-gradient-to-br from-indigo-500/10 via-sky-500/10 to-emerald-400/10 p-4">
+                                <div className="absolute -right-8 -top-10 h-24 w-24 rounded-full bg-sky-500/20 blur-2xl" />
+                                <div className="absolute -left-10 bottom-0 h-24 w-24 rounded-full bg-emerald-400/20 blur-2xl" />
+                                <div className="relative space-y-2">
+                                    <h3 className="text-sm font-semibold text-zinc-100">How I keep it safe</h3>
+                                    <ul className="space-y-2 text-sm text-zinc-300">
+                                        <li className="flex items-start gap-2">
+                                            <span className="mt-1 h-2 w-2 rounded-full bg-purple-300" />
+                                            QA checklists, test accounts, and alerting for every release.
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="mt-1 h-2 w-2 rounded-full bg-emerald-300" />
+                                            Fallbacks and retries when APIs misbehave.
+                                        </li>
+                                        <li className="flex items-start gap-2">
+                                            <span className="mt-1 h-2 w-2 rounded-full bg-amber-300" />
+                                            Runbooks and docs that make ownership clear after launch.
+                                        </li>
+                                    </ul>
+                                    <motion.div
+                                        animate={{ y: [0, -6, 0] }}
+                                        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                                        className="mt-3 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-100"
+                                    >
+                                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
+                                        Safe experimentation beats fragile hacks
+                                    </motion.div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="grid gap-4 md:grid-cols-3">
+                            {skillHighlights.map((item, index) => (
+                                <motion.div
+                                    key={item.title}
+                                    whileHover={{ y: -6, scale: 1.01 }}
+                                    transition={{ type: "spring", stiffness: 200, damping: 12 }}
+                                    className="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900/50 p-4"
+                                    style={{
+                                        boxShadow: "0 10px 40px rgba(0,0,0,0.35)",
+                                    }}
+                                >
+                                    <div className={`absolute inset-0 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100 bg-gradient-to-br ${item.gradient}`} />
+                                    <div className="relative flex items-start gap-3">
+                                        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-zinc-700/70 bg-zinc-900/70 shadow-inner">
+                                            {item.icon}
+                                        </div>
+                                        <div className="space-y-1">
+                                            <h3 className="text-sm font-semibold text-zinc-100">{item.title}</h3>
+                                            <p className="text-xs leading-relaxed text-zinc-300">{item.description}</p>
+                                        </div>
                                     </div>
-                                </MagneticHover>
+                                    <motion.div
+                                        className="mt-4 h-1 rounded-full bg-gradient-to-r from-purple-400/80 via-cyan-400/80 to-emerald-400/80"
+                                        initial={{ scaleX: 0, originX: 0 }}
+                                        whileInView={{ scaleX: 1 }}
+                                        viewport={{ once: true }}
+                                        transition={{ delay: 0.1 * index + 0.1, duration: 0.5 }}
+                                    />
+                                </motion.div>
                             ))}
+                        </div>
+
+                        <div className="space-y-3">
+                            <div className="flex items-center justify-between">
+                                <h3 className="text-sm font-semibold text-zinc-100">Toolbox</h3>
+                                <span className="text-xs text-zinc-400">APIs, no-code, and AI that play nicely together.</span>
+                            </div>
+                            <div className="grid gap-3 md:grid-cols-3">
+                                {toolIcons.map((tool) => (
+                                    <MagneticHover key={tool.name} className="block">
+                                        <div className="group relative flex items-start gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
+                                            <div className={`relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-zinc-700/70 bg-gradient-to-br ${tool.gradient}`}>
+                                                <div className="absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-70 bg-white/10" />
+                                                <div className="relative">{tool.icon}</div>
+                                            </div>
+                                            <div className="space-y-1">
+                                                <p className="text-sm font-semibold text-zinc-100">{tool.name}</p>
+                                                <p className="text-xs text-zinc-300">{tool.description}</p>
+                                            </div>
+                                        </div>
+                                    </MagneticHover>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </motion.section>
