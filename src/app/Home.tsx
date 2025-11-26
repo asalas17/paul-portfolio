@@ -647,6 +647,113 @@ export default function Home() {
                     </div>
                 </section>
 
+                {/* CONTACT */}
+                <motion.section
+                    id="contact"
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="
+    w-full
+    snap-center
+    min-h-auto
+    items-start
+
+    md:w-screen
+    md:shrink-0
+    md:min-h-screen
+    md:flex
+    md:items-center
+  "
+                >
+                    <div className="mx-auto flex w-full max-w-3xl flex-col space-y-4 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 text-sm text-zinc-300 backdrop-blur-md md:p-8">
+                        <h2 className="text-lg font-semibold text-zinc-50">
+                            Let&apos;s build what&apos;s next
+                        </h2>
+                        <p>
+                            If you&apos;re looking to scale your operations, reduce manual
+                            workload, or explore how AI and automation can support your team, I&apos;d
+                            love to connect.
+                        </p>
+                        <div className="space-y-2">
+                            <p>
+                                <span className="text-zinc-400">Email:</span>{" "}
+                                <a
+                                    href="mailto:paulcohen10000@gmail.com"
+                                    className="text-purple-300 hover:text-purple-200"
+                                >
+                                    paulcohen10000@gmail.com
+                                </a>
+                            </p>
+                            <p>
+                                <span className="text-zinc-400">LinkedIn:</span>{" "}
+                                <a
+                                    href="https://www.linkedin.com/in/pjcohen/"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-purple-300 hover:text-purple-200"
+                                >
+                                    linkedin.com/in/pjcohen
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </motion.section>
+
+                <motion.section
+                    variants={sectionVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="
+    w-full
+    snap-center
+    min-h-auto
+    items-start
+
+    md:w-screen
+    md:shrink-0
+    md:min-h-screen
+    md:flex
+    md:items-center
+  "
+                >
+                    <div className="mx-auto flex w-full max-w-3xl flex-col gap-3 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 text-sm text-zinc-300 backdrop-blur-md md:p-8">
+                        <h2 className="text-lg font-semibold text-zinc-50">
+                            Want to know more?
+                        </h2>
+                        <p>
+                            Keep scrolling to see how I build automation strategies, lead teams, and ship dependable workflows across industries.
+                        </p>
+                        <div className="flex flex-wrap gap-3">
+                            <a
+                                href="#about"
+                                onClick={(event) => handleNavClick(event, "about")}
+                                className="rounded-full border border-zinc-700 bg-zinc-800/50 px-4 py-2 text-xs font-medium text-zinc-100 hover:border-zinc-600 hover:bg-zinc-800"
+                            >
+                                About &amp; Skills
+                            </a>
+                            <a
+                                href="#experience"
+                                onClick={(event) => handleNavClick(event, "experience")}
+                                className="rounded-full border border-zinc-700 bg-zinc-800/50 px-4 py-2 text-xs font-medium text-zinc-100 hover:border-zinc-600 hover:bg-zinc-800"
+                            >
+                                Experience
+                            </a>
+                            <a
+                                href="#projects"
+                                onClick={(event) => handleNavClick(event, "projects")}
+                                className="rounded-full border border-zinc-700 bg-zinc-800/50 px-4 py-2 text-xs font-medium text-zinc-100 hover:border-zinc-600 hover:bg-zinc-800"
+                            >
+                                Projects
+                            </a>
+                        </div>
+                    </div>
+                </motion.section>
+
                 {/* ABOUT + SKILLS */}
                 <motion.section
                     id="about"
@@ -1076,60 +1183,6 @@ export default function Home() {
                     </div>
                 </motion.section>
 
-                {/* CONTACT */}
-                <motion.section
-                    id="contact"
-                    variants={sectionVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="
-    w-full
-    snap-center
-    min-h-auto
-    items-start
-
-    md:w-screen 
-    md:shrink-0
-    md:min-h-screen
-    md:flex
-    md:items-center
-  "
-                >
-                    <div className="mx-auto flex w-full max-w-3xl flex-col space-y-4 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 text-sm text-zinc-300 backdrop-blur-md md:p-8">
-                        <h2 className="text-lg font-semibold text-zinc-50">
-                            Let&apos;s build what&apos;s next
-                        </h2>
-                        <p>
-                            If you&apos;re looking to scale your operations, reduce manual
-                            workload, or explore how AI and automation can support your team, I&apos;d
-                            love to connect.
-                        </p>
-                        <div className="space-y-2">
-                            <p>
-                                <span className="text-zinc-400">Email:</span>{" "}
-                                <a
-                                    href="mailto:paulcohen10000@gmail.com"
-                                    className="text-purple-300 hover:text-purple-200"
-                                >
-                                    paulcohen10000@gmail.com
-                                </a>
-                            </p>
-                            <p>
-                                <span className="text-zinc-400">LinkedIn:</span>{" "}
-                                <a
-                                    href="https://www.linkedin.com/in/pjcohen/"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="text-purple-300 hover:text-purple-200"
-                                >
-                                    linkedin.com/in/pjcohen
-                                </a>
-                            </p>
-                        </div>
-                    </div>
-                </motion.section>
             </div>
         </main>
     );
