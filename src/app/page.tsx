@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import CustomCursor from "./components/CustomCursor";
 
 const heroVariants = {
@@ -18,6 +18,7 @@ const sectionVariants = {
 export default function Home() {
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleMouseMove = (event: MouseEvent) => {
@@ -34,6 +35,32 @@ export default function Home() {
   const layer2X = useTransform(mouseX, (value) => (value - 0.5) * -40);
   const layer2Y = useTransform(mouseY, (value) => (value - 0.5) * 30);
 
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    if (!scrollContainer) return;
+
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+
+    const handleWheel = (event: WheelEvent) => {
+      if (!mediaQuery.matches || !scrollContainer) return;
+
+      const deltaY = event.deltaY;
+      if (deltaY === 0) return;
+
+      event.preventDefault();
+      scrollContainer.scrollTo({
+        left: scrollContainer.scrollLeft + deltaY,
+        behavior: "smooth",
+      });
+    };
+
+    scrollContainer.addEventListener("wheel", handleWheel, { passive: false });
+
+    return () => {
+      scrollContainer.removeEventListener("wheel", handleWheel);
+    };
+  }, []);
+
   const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     event.preventDefault();
     document.getElementById(id)?.scrollIntoView({
@@ -44,7 +71,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#050509] text-zinc-100 overflow-x-auto overflow-y-hidden scroll-smooth">
+    <main className="min-h-screen bg-[#050509] text-zinc-100 overflow-y-auto overflow-x-hidden md:overflow-x-auto md:overflow-y-hidden scroll-smooth">
       <CustomCursor />
       {/* Background gradient */}
       <div className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-br from-[#050509] via-[#050509] to-[#050509]" />
@@ -89,7 +116,10 @@ export default function Home() {
         </nav>
       </header>
 
-      <div className="flex min-h-screen snap-x snap-mandatory overflow-x-auto overflow-y-hidden px-4 pb-12 pt-28 md:px-8">
+      <div
+        ref={scrollContainerRef}
+        className="flex min-h-screen flex-col md:flex-row md:snap-x md:snap-mandatory overflow-y-auto md:overflow-y-hidden md:overflow-x-auto px-4 pb-12 pt-28 md:px-8"
+      >
         {/* HERO */}
         <section className="relative flex min-h-[75vh] w-screen shrink-0 items-center justify-center snap-center md:min-h-screen">
           <motion.div
