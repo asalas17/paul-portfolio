@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import CustomCursor from "./components/CustomCursor";
 
 const heroVariants = {
@@ -15,6 +16,17 @@ const sectionVariants = {
 };
 
 export default function Home() {
+  const heroRef = useRef<HTMLElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start end", "end start"],
+  });
+
+  const leftGlowY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const rightGlowY = useTransform(scrollYProgress, [0, 1], [0, 120]);
+  const photoLift = useTransform(scrollYProgress, [0, 1], [0, -40]);
+  const titleLift = useTransform(scrollYProgress, [0, 1], [0, -20]);
+
   return (
     <main className="min-h-screen bg-[#050509] text-zinc-100">
       <CustomCursor />
@@ -48,7 +60,22 @@ export default function Home() {
         </header>
 
         {/* HERO */}
-        <section className="grid gap-10 md:grid-cols-[1.6fr,1.2fr] md:items-center">
+        <section
+          ref={heroRef}
+          className="relative grid gap-10 overflow-hidden rounded-[28px] border border-zinc-900/50 bg-zinc-900/20 p-4 md:grid-cols-[1.6fr,1.2fr] md:items-center md:p-8"
+        >
+          <div className="pointer-events-none absolute inset-0 -z-10 opacity-80">
+            <motion.div
+              style={{ y: leftGlowY }}
+              className="absolute -left-20 top-10 h-64 w-64 rounded-full bg-purple-500/40 blur-3xl"
+            />
+            <motion.div
+              style={{ y: rightGlowY }}
+              className="absolute -right-10 bottom-6 h-72 w-72 rounded-full bg-sky-400/40 blur-3xl"
+            />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(168,85,247,0.08),transparent_45%),radial-gradient(circle_at_80%_40%,rgba(56,189,248,0.08),transparent_40%)]" />
+          </div>
+
           <motion.div
             variants={heroVariants}
             initial="hidden"
@@ -59,12 +86,15 @@ export default function Home() {
             <p className="text-xs font-medium uppercase tracking-[0.25em] text-purple-300/90">
               Operations & AI Automation Lead
             </p>
-            <h1 className="text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl">
+            <motion.h1
+              style={{ y: titleLift }}
+              className="text-4xl font-semibold tracking-tight text-zinc-50 sm:text-5xl"
+            >
               Designing end-to-end automations
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-sky-300">
                 that turn complexity into clarity.
               </span>
-            </h1>
+            </motion.h1>
             <p className="max-w-xl text-sm text-zinc-300 sm:text-base">
               I build automation systems that connect tools, teams, and data — so
               people can focus on meaningful work instead of repetitive tasks.
@@ -119,6 +149,7 @@ export default function Home() {
             initial="hidden"
             animate="visible"
             transition={{ duration: 0.6, delay: 0.15 }}
+            style={{ y: photoLift }}
             className="relative mx-auto h-64 w-64 overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/60 shadow-[0_0_60px_rgba(147,51,234,0.3)] sm:h-72 sm:w-72"
           >
             <Image
