@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import CustomCursor from "./components/CustomCursor";
 
 const heroVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -16,6 +17,7 @@ const sectionVariants = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#050509] text-zinc-100">
+      <CustomCursor />
       {/* Background gradient */}
       <div className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-br from-[#050509] via-[#050509] to-[#050509]" />
       <div className="pointer-events-none fixed inset-0 -z-10 opacity-40 mix-blend-screen">
