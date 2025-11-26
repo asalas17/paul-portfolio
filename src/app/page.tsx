@@ -64,20 +64,26 @@ export default function Home() {
     const handleWheel = (event: WheelEvent) => {
       if (!mediaQuery.matches || !scrollContainer) return;
 
-      const deltaY = event.deltaY;
-      if (deltaY === 0) return;
+      const primaryDelta =
+        Math.abs(event.deltaY) >= Math.abs(event.deltaX)
+          ? event.deltaY
+          : event.deltaX;
+
+      if (primaryDelta === 0) return;
 
       event.preventDefault();
-      scrollContainer.scrollTo({
-        left: scrollContainer.scrollLeft + deltaY,
+      scrollContainer.scrollBy({
+        left: primaryDelta,
         behavior: "smooth",
       });
     };
 
-    window.addEventListener("wheel", handleWheel, { passive: false });
+    scrollContainer.addEventListener("wheel", handleWheel, {
+      passive: false,
+    });
 
     return () => {
-      window.removeEventListener("wheel", handleWheel);
+      scrollContainer.removeEventListener("wheel", handleWheel);
     };
   }, []);
 
