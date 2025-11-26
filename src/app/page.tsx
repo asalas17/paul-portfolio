@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { motion, useMotionValue, useTransform } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import { motion, useMotionValue, useReducedMotion, useTransform } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import CustomCursor from "./components/CustomCursor";
 
 const heroVariants = {
@@ -16,11 +16,30 @@ const sectionVariants = {
 };
 
 export default function Home() {
+  const prefersReducedMotion = useReducedMotion();
+  const [hasFinePointer, setHasFinePointer] = useState(false);
   const mouseX = useMotionValue(0.5);
   const mouseY = useMotionValue(0.5);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia("(pointer: fine)");
+
+    const updatePointerPreference = () => {
+      setHasFinePointer(mediaQuery.matches);
+    };
+
+    updatePointerPreference();
+    mediaQuery.addEventListener("change", updatePointerPreference);
+
+    return () => mediaQuery.removeEventListener("change", updatePointerPreference);
+  }, []);
+
+  useEffect(() => {
+    if (prefersReducedMotion || !hasFinePointer) {
+      return undefined;
+    }
+
     const handleMouseMove = (event: MouseEvent) => {
       mouseX.set(event.clientX / window.innerWidth);
       mouseY.set(event.clientY / window.innerHeight);
@@ -28,7 +47,7 @@ export default function Home() {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [mouseX, mouseY]);
+  }, [hasFinePointer, mouseX, mouseY, prefersReducedMotion]);
 
   const layer1X = useTransform(mouseX, (value) => (value - 0.5) * 60);
   const layer1Y = useTransform(mouseY, (value) => (value - 0.5) * 40);
