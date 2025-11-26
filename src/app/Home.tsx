@@ -196,109 +196,37 @@ const toolIcons = [
     {
         name: "n8n",
         description: "Visual orchestration for multi-step workflows.",
-        gradient: "from-orange-500/25 to-pink-500/25",
-        icon: (
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-orange-200">
-                <circle cx="7" cy="12" r="2.25" stroke="currentColor" strokeWidth="1.5" />
-                <circle cx="17" cy="7" r="2.25" stroke="currentColor" strokeWidth="1.5" />
-                <circle cx="17" cy="17" r="2.25" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M9.2 11.3 14.8 8.2M9.2 12.7l5.6 3.1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-        ),
+        iconPaths: ["/icons/tools/n8n.svg"],
     },
     {
         name: "Zapier",
         description: "Fast automations that connect scattered tools.",
-        gradient: "from-amber-500/25 to-red-500/25",
-        icon: (
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-amber-100">
-                <path
-                    d="M12 4.5v3m0 9v3m7.5-7.5h-3m-9 0h-3m11.1-4.1-2.2 2.2m-4.4 4.4-2.2 2.2m8.8 0-2.2-2.2m-4.4-4.4-2.2-2.2"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                />
-                <circle cx="12" cy="12" r="2.3" stroke="currentColor" strokeWidth="1.5" />
-            </svg>
-        ),
+        iconPaths: ["/icons/tools/zapier.svg"],
     },
     {
         name: "Make.com",
         description: "Complex branching, variables, and scheduling.",
-        gradient: "from-fuchsia-500/25 to-indigo-500/25",
-        icon: (
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-fuchsia-100">
-                <rect x="5" y="5" width="3" height="14" rx="1" fill="currentColor" />
-                <rect x="10.5" y="5" width="3" height="14" rx="1" fill="currentColor" />
-                <rect x="16" y="5" width="3" height="14" rx="1" fill="currentColor" />
-            </svg>
-        ),
+        iconPaths: ["/icons/tools/make.svg"],
     },
     {
         name: "Slack & Twilio",
         description: "Messaging hooks for alerts, nudges, and follow-ups.",
-        gradient: "from-cyan-400/25 to-emerald-400/25",
-        icon: (
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-cyan-100">
-                <path
-                    d="M7 11a3 3 0 1 1 6 0v1.25A2.75 2.75 0 0 0 15.75 15H17a3 3 0 1 1-3 3v-1.25A2.75 2.75 0 0 0 11.25 14H10a3 3 0 1 1-3-3Z"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                />
-                <circle cx="17" cy="8" r="1" fill="currentColor" />
-                <circle cx="7" cy="16" r="1" fill="currentColor" />
-            </svg>
-        ),
+        iconPaths: ["/icons/tools/slack.svg", "/icons/tools/twilio.svg"],
     },
     {
         name: "Stripe & Brex",
         description: "Revenue, finance, and approvals tied to workflows.",
-        gradient: "from-sky-400/25 to-purple-400/25",
-        icon: (
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-sky-100">
-                <path
-                    d="M7.5 8.5c0-1.66 1.4-3 3.13-3h2.74c1.73 0 3.13 1.34 3.13 3 0 1.66-1.4 3-3.13 3H10.7c-1.73 0-3.2 1.34-3.2 3s1.47 3 3.2 3h2.6c1.83 0 3.3-1.34 3.3-3"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                />
-                <path d="M12 5.5v13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-        ),
+        iconPaths: ["/icons/tools/stripe.svg", "/icons/tools/brex.svg"],
     },
     {
         name: "Airtable & Notion",
         description: "Lightweight databases and documentation that stay in sync.",
-        gradient: "from-amber-300/25 to-emerald-300/25",
-        icon: (
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-emerald-100">
-                <path
-                    d="M6 7.5 12 5l6 2.5v9L12 19l-6-2.5v-9Z"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinejoin="round"
-                />
-                <path d="M9 9.5 15 12l-6 2.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                <path d="M9 14.5V9.5l6-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-        ),
+        iconPaths: ["/icons/tools/airtable.svg", "/icons/tools/notion.svg"],
     },
     {
         name: "OpenAI & AI Video",
         description: "Creative assets, summaries, and assistants backed by guardrails.",
-        gradient: "from-indigo-400/25 to-rose-400/25",
-        icon: (
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-rose-100">
-                <path
-                    d="M12 5.5a6.5 6.5 0 0 1 0 13 6.5 6.5 0 0 1 0-13Z"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                />
-                <path d="M7.5 9.5a6 6 0 0 0 9 0m-9 5a6 6 0 0 1 9 0" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M12 7v10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-        ),
+        iconPaths: ["/icons/tools/openai.svg", "/icons/tools/video.svg"],
     },
 ];
 
@@ -954,10 +882,17 @@ export default function Home() {
                                     <div className="grid gap-3 md:grid-cols-3">
                                         {toolIcons.map((tool) => (
                                             <MagneticHover key={tool.name} className="block">
-                                                <div className="group relative flex items-start gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
-                                                    <div className={`relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-zinc-700/70 bg-gradient-to-br ${tool.gradient}`}>
-                                                        <div className="absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-70 bg-white/10" />
-                                                        <div className="relative">{tool.icon}</div>
+                                                <div className="group relative flex items-start gap-3 rounded-2xl border border-zinc-800/80 bg-zinc-900/30 p-4 shadow-[0_10px_24px_rgba(0,0,0,0.25)]">
+                                                    <div className="flex items-center gap-2">
+                                                        {tool.iconPaths.map((path) => (
+                                                            <div
+                                                                key={path}
+                                                                className="relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950"
+                                                            >
+                                                                <div className="absolute inset-0 bg-white/5 opacity-0 transition duration-300 group-hover:opacity-80" />
+                                                                <Image src={path} alt={`${tool.name} icon`} width={32} height={32} className="relative h-8 w-8 object-contain" />
+                                                            </div>
+                                                        ))}
                                                     </div>
                                                     <div className="space-y-1">
                                                         <p className="text-sm font-semibold text-zinc-100">{tool.name}</p>
