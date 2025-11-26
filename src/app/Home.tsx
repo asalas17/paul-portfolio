@@ -697,7 +697,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* ABOUT */}
+                {/* ABOUT + SKILLS */}
                 <motion.section
                     id="about"
                     variants={sectionVariants}
@@ -718,253 +718,237 @@ export default function Home() {
     md:items-center
   "
                 >
-                    <div className="relative mx-auto max-w-5xl space-y-6 overflow-hidden rounded-3xl border border-zinc-800 bg-gradient-to-br from-[#0b0b14] via-[#0c0c1c] to-[#0a0a10] p-6 shadow-[0_0_80px_rgba(99,102,241,0.18)] backdrop-blur-md md:p-10">
+                    <div className="relative mx-auto max-w-5xl overflow-hidden rounded-3xl border border-zinc-800 bg-gradient-to-br from-[#0b0b14] via-[#0c0c1c] to-[#0a0a10] p-6 shadow-[0_0_80px_rgba(99,102,241,0.18)] backdrop-blur-md md:p-10">
                         <div className="pointer-events-none absolute -left-16 top-6 h-40 w-40 rounded-full bg-purple-600/20 blur-3xl" />
                         <div className="pointer-events-none absolute -right-10 bottom-6 h-32 w-32 rounded-full bg-cyan-500/20 blur-3xl" />
 
-                        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                            <div className="space-y-2">
-                                <h2 className="text-xl font-semibold text-zinc-50">
-                                    About Paul
-                                </h2>
-                                <p className="max-w-3xl text-sm leading-relaxed text-zinc-300">
-                                    I’m an Operations &amp; AI Automation Lead focused on building systems that make work more human, not less. Clear goals, high standards, and meaningful outcomes guide every collaboration.
-                                </p>
-                            </div>
-                            <motion.div
-                                whileHover={{ scale: 1.03 }}
-                                transition={{ type: "spring", stiffness: 220, damping: 12 }}
-                                className="relative inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-500/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.08em] text-purple-100"
-                            >
-                                <span className="flex h-2 w-2 rounded-full bg-purple-300 shadow-[0_0_0_6px_rgba(168,85,247,0.35)]" />
-                                Building calm, reliable systems
-                            </motion.div>
-                        </div>
-
-                        <div className="grid gap-4 md:grid-cols-2">
-                            <div className="space-y-3 rounded-2xl border border-zinc-800/70 bg-zinc-900/40 p-4 shadow-inner">
-                                <h3 className="text-sm font-semibold text-zinc-100">What motivates me</h3>
-                                <p className="text-sm leading-relaxed text-zinc-300">
-                                    Whether I’m designing automations, integrating APIs, or supporting cross-functional teams, my goal is to deliver reliable outcomes and make everyone’s day a little easier. I prioritize the people behind the processes and the long-term health of the systems we build.
-                                </p>
-                                <div className="flex flex-wrap gap-2 text-[11px] text-zinc-200">
-                                    <span className="rounded-full bg-purple-500/15 px-3 py-1 font-medium text-purple-100">Human-centered</span>
-                                    <span className="rounded-full bg-emerald-500/15 px-3 py-1 font-medium text-emerald-100">Impact-first</span>
-                                    <span className="rounded-full bg-cyan-500/15 px-3 py-1 font-medium text-cyan-100">Documented</span>
-                                    <span className="rounded-full bg-amber-500/15 px-3 py-1 font-medium text-amber-100">Measurable</span>
-                                </div>
-                            </div>
-
-                            <div className="relative overflow-hidden rounded-2xl border border-zinc-800/70 bg-gradient-to-br from-indigo-500/10 via-sky-500/10 to-emerald-400/10 p-4">
-                                <div className="absolute -right-8 -top-10 h-24 w-24 rounded-full bg-sky-500/20 blur-2xl" />
-                                <div className="absolute -left-10 bottom-0 h-24 w-24 rounded-full bg-emerald-400/20 blur-2xl" />
-                                <div className="relative space-y-2">
-                                    <h3 className="text-sm font-semibold text-zinc-100">How I work</h3>
-                                    <ul className="space-y-2 text-sm text-zinc-300">
-                                        <li className="flex items-start gap-2">
-                                            <span className="mt-1 h-2 w-2 rounded-full bg-purple-300" />
-                                            Design clarity, then automate what matters.
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="mt-1 h-2 w-2 rounded-full bg-emerald-300" />
-                                            Pair fast experiments with strong QA and monitoring.
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="mt-1 h-2 w-2 rounded-full bg-amber-300" />
-                                            Leave teams with playbooks, runbooks, and clear ownership.
-                                        </li>
-                                    </ul>
-                                    <motion.div
-                                        animate={{ y: [0, -6, 0] }}
-                                        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                                        className="mt-3 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-100"
-                                    >
-                                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
-                                        Ops leader who keeps experimentation safe
-                                    </motion.div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="grid gap-4 md:grid-cols-3">
-                            {aboutHighlights.map((item, index) => (
-                                <motion.div
-                                    key={item.title}
-                                    whileHover={{ y: -6, scale: 1.01 }}
-                                    transition={{ type: "spring", stiffness: 200, damping: 12 }}
-                                    className="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900/50 p-4"
-                                    style={{
-                                        boxShadow: "0 10px 40px rgba(0,0,0,0.35)",
-                                    }}
-                                >
-                                    <div className={`absolute inset-0 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100 bg-gradient-to-br ${item.gradient}`} />
-                                    <div className="relative flex items-start gap-3">
-                                        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-zinc-700/70 bg-zinc-900/70 shadow-inner">
-                                            {item.icon}
-                                        </div>
-                                        <div className="space-y-1">
-                                            <h3 className="text-sm font-semibold text-zinc-100">{item.title}</h3>
-                                            <p className="text-xs leading-relaxed text-zinc-300">{item.description}</p>
-                                        </div>
+                        <div
+                            className="flex flex-col gap-6 md:h-[88vh] md:overflow-y-auto md:pr-3 md:[scrollbar-width:thin] md:[scrollbar-color:rgba(255,255,255,0.15)_transparent] md:[&::-webkit-scrollbar]:w-1.5 md:[&::-webkit-scrollbar-track]:bg-transparent md:[&::-webkit-scrollbar-thumb]:bg-[rgba(255,255,255,0.25)] md:[&::-webkit-scrollbar-thumb]:rounded-full md:hover:[&::-webkit-scrollbar-thumb]:bg-[rgba(255,255,255,0.35)]"
+                        >
+                            <div className="space-y-6">
+                                <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                                    <div className="space-y-2">
+                                        <h2 className="text-xl font-semibold text-zinc-50">
+                                            About Paul
+                                        </h2>
+                                        <p className="max-w-3xl text-sm leading-relaxed text-zinc-300">
+                                            I’m an Operations &amp; AI Automation Lead focused on building systems that make work more human, not less. Clear goals, high standards, and meaningful outcomes guide every collaboration.
+                                        </p>
                                     </div>
                                     <motion.div
-                                        className="mt-4 h-1 rounded-full bg-gradient-to-r from-purple-400/80 via-cyan-400/80 to-emerald-400/80"
-                                        initial={{ scaleX: 0, originX: 0 }}
-                                        whileInView={{ scaleX: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.1 * index + 0.1, duration: 0.5 }}
-                                    />
-                                </motion.div>
-                            ))}
-                        </div>
-                    </div>
-                </motion.section>
-
-                {/* SKILLS */}
-                <motion.section
-                    variants={sectionVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="
-    w-full
-    snap-center
-    min-h-auto
-    items-start
-
-    md:w-screen
-    md:shrink-0
-    md:min-h-screen
-    md:flex
-    md:items-center
-  "
-                >
-                    <div className="relative mx-auto max-w-5xl space-y-6 overflow-hidden rounded-3xl border border-zinc-800 bg-gradient-to-br from-[#0b0b14] via-[#0c0c1c] to-[#0a0a10] p-6 shadow-[0_0_80px_rgba(99,102,241,0.18)] backdrop-blur-md md:p-10">
-                        <div className="pointer-events-none absolute -left-14 top-4 h-40 w-40 rounded-full bg-purple-600/20 blur-3xl" />
-                        <div className="pointer-events-none absolute -right-10 bottom-6 h-32 w-32 rounded-full bg-emerald-500/20 blur-3xl" />
-
-                        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-                            <div className="space-y-2">
-                                <h2 className="text-xl font-semibold text-zinc-50">
-                                    Skills &amp; Tools
-                                </h2>
-                                <p className="max-w-3xl text-sm leading-relaxed text-zinc-300">
-                                    Systems thinking meets hands-on execution. I design automation stacks, connect the data, and keep the guardrails in place so teams can ship confidently.
-                                </p>
-                            </div>
-                            <motion.div
-                                whileHover={{ scale: 1.03 }}
-                                transition={{ type: "spring", stiffness: 220, damping: 12 }}
-                                className="relative inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-500/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.08em] text-sky-100"
-                            >
-                                <span className="flex h-2 w-2 rounded-full bg-sky-300 shadow-[0_0_0_6px_rgba(56,189,248,0.35)]" />
-                                Automation-first, human-centered
-                            </motion.div>
-                        </div>
-
-                        <div className="grid gap-4 md:grid-cols-2">
-                            <div className="space-y-3 rounded-2xl border border-zinc-800/70 bg-zinc-900/50 p-4 shadow-inner">
-                                <h3 className="text-sm font-semibold text-zinc-100">What I build</h3>
-                                <p className="text-sm leading-relaxed text-zinc-300">
-                                    Workflow architectures that blend no-code and code, keeping data accurate across CRMs, finance, and messaging tools. Every flow ships with clear ownership and documented handoffs.
-                                </p>
-                                <div className="flex flex-wrap gap-2 text-[11px] text-zinc-200">
-                                    <span className="rounded-full bg-purple-500/15 px-3 py-1 font-medium text-purple-100">Orchestrations</span>
-                                    <span className="rounded-full bg-emerald-500/15 px-3 py-1 font-medium text-emerald-100">APIs &amp; Webhooks</span>
-                                    <span className="rounded-full bg-sky-500/15 px-3 py-1 font-medium text-sky-100">Messaging</span>
-                                    <span className="rounded-full bg-amber-500/15 px-3 py-1 font-medium text-amber-100">Analytics</span>
-                                </div>
-                            </div>
-
-                            <div className="relative overflow-hidden rounded-2xl border border-zinc-800/70 bg-gradient-to-br from-indigo-500/10 via-sky-500/10 to-emerald-400/10 p-4">
-                                <div className="absolute -right-8 -top-10 h-24 w-24 rounded-full bg-sky-500/20 blur-2xl" />
-                                <div className="absolute -left-10 bottom-0 h-24 w-24 rounded-full bg-emerald-400/20 blur-2xl" />
-                                <div className="relative space-y-2">
-                                    <h3 className="text-sm font-semibold text-zinc-100">How I keep it safe</h3>
-                                    <ul className="space-y-2 text-sm text-zinc-300">
-                                        <li className="flex items-start gap-2">
-                                            <span className="mt-1 h-2 w-2 rounded-full bg-purple-300" />
-                                            QA checklists, test accounts, and alerting for every release.
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="mt-1 h-2 w-2 rounded-full bg-emerald-300" />
-                                            Fallbacks and retries when APIs misbehave.
-                                        </li>
-                                        <li className="flex items-start gap-2">
-                                            <span className="mt-1 h-2 w-2 rounded-full bg-amber-300" />
-                                            Runbooks and docs that make ownership clear after launch.
-                                        </li>
-                                    </ul>
-                                    <motion.div
-                                        animate={{ y: [0, -6, 0] }}
-                                        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                                        className="mt-3 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-100"
+                                        whileHover={{ scale: 1.03 }}
+                                        transition={{ type: "spring", stiffness: 220, damping: 12 }}
+                                        className="relative inline-flex items-center gap-2 rounded-full border border-purple-500/40 bg-purple-500/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.08em] text-purple-100"
                                     >
-                                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
-                                        Safe experimentation beats fragile hacks
+                                        <span className="flex h-2 w-2 rounded-full bg-purple-300 shadow-[0_0_0_6px_rgba(168,85,247,0.35)]" />
+                                        Building calm, reliable systems
                                     </motion.div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div className="grid gap-4 md:grid-cols-3">
-                            {skillHighlights.map((item, index) => (
-                                <motion.div
-                                    key={item.title}
-                                    whileHover={{ y: -6, scale: 1.01 }}
-                                    transition={{ type: "spring", stiffness: 200, damping: 12 }}
-                                    className="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900/50 p-4"
-                                    style={{
-                                        boxShadow: "0 10px 40px rgba(0,0,0,0.35)",
-                                    }}
-                                >
-                                    <div className={`absolute inset-0 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100 bg-gradient-to-br ${item.gradient}`} />
-                                    <div className="relative flex items-start gap-3">
-                                        <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-zinc-700/70 bg-zinc-900/70 shadow-inner">
-                                            {item.icon}
-                                        </div>
-                                        <div className="space-y-1">
-                                            <h3 className="text-sm font-semibold text-zinc-100">{item.title}</h3>
-                                            <p className="text-xs leading-relaxed text-zinc-300">{item.description}</p>
+                                <div className="grid gap-4 md:grid-cols-2">
+                                    <div className="space-y-3 rounded-2xl border border-zinc-800/70 bg-zinc-900/40 p-4 shadow-inner">
+                                        <h3 className="text-sm font-semibold text-zinc-100">What motivates me</h3>
+                                        <p className="text-sm leading-relaxed text-zinc-300">
+                                            Whether I’m designing automations, integrating APIs, or supporting cross-functional teams, my goal is to deliver reliable outcomes and make everyone’s day a little easier. I prioritize the people behind the processes and the long-term health of the systems we build.
+                                        </p>
+                                        <div className="flex flex-wrap gap-2 text-[11px] text-zinc-200">
+                                            <span className="rounded-full bg-purple-500/15 px-3 py-1 font-medium text-purple-100">Human-centered</span>
+                                            <span className="rounded-full bg-emerald-500/15 px-3 py-1 font-medium text-emerald-100">Impact-first</span>
+                                            <span className="rounded-full bg-cyan-500/15 px-3 py-1 font-medium text-cyan-100">Documented</span>
+                                            <span className="rounded-full bg-amber-500/15 px-3 py-1 font-medium text-amber-100">Measurable</span>
                                         </div>
                                     </div>
-                                    <motion.div
-                                        className="mt-4 h-1 rounded-full bg-gradient-to-r from-purple-400/80 via-cyan-400/80 to-emerald-400/80"
-                                        initial={{ scaleX: 0, originX: 0 }}
-                                        whileInView={{ scaleX: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.1 * index + 0.1, duration: 0.5 }}
-                                    />
-                                </motion.div>
-                            ))}
-                        </div>
 
-                        <div className="space-y-3">
-                            <div className="flex items-center justify-between">
-                                <h3 className="text-sm font-semibold text-zinc-100">Toolbox</h3>
-                                <span className="text-xs text-zinc-400">APIs, no-code, and AI that play nicely together.</span>
-                            </div>
-                            <div className="grid gap-3 md:grid-cols-3">
-                                {toolIcons.map((tool) => (
-                                    <MagneticHover key={tool.name} className="block">
-                                        <div className="group relative flex items-start gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
-                                            <div className={`relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-zinc-700/70 bg-gradient-to-br ${tool.gradient}`}>
-                                                <div className="absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-70 bg-white/10" />
-                                                <div className="relative">{tool.icon}</div>
-                                            </div>
-                                            <div className="space-y-1">
-                                                <p className="text-sm font-semibold text-zinc-100">{tool.name}</p>
-                                                <p className="text-xs text-zinc-300">{tool.description}</p>
-                                            </div>
+                                    <div className="relative overflow-hidden rounded-2xl border border-zinc-800/70 bg-gradient-to-br from-indigo-500/10 via-sky-500/10 to-emerald-400/10 p-4">
+                                        <div className="absolute -right-8 -top-10 h-24 w-24 rounded-full bg-sky-500/20 blur-2xl" />
+                                        <div className="absolute -left-10 bottom-0 h-24 w-24 rounded-full bg-emerald-400/20 blur-2xl" />
+                                        <div className="relative space-y-2">
+                                            <h3 className="text-sm font-semibold text-zinc-100">How I work</h3>
+                                            <ul className="space-y-2 text-sm text-zinc-300">
+                                                <li className="flex items-start gap-2">
+                                                    <span className="mt-1 h-2 w-2 rounded-full bg-purple-300" />
+                                                    Design clarity, then automate what matters.
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="mt-1 h-2 w-2 rounded-full bg-emerald-300" />
+                                                    Pair fast experiments with strong QA and monitoring.
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="mt-1 h-2 w-2 rounded-full bg-amber-300" />
+                                                    Leave teams with playbooks, runbooks, and clear ownership.
+                                                </li>
+                                            </ul>
+                                            <motion.div
+                                                animate={{ y: [0, -6, 0] }}
+                                                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                                                className="mt-3 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-100"
+                                            >
+                                                <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
+                                                Ops leader who keeps experimentation safe
+                                            </motion.div>
                                         </div>
-                                    </MagneticHover>
-                                ))}
+                                    </div>
+                                </div>
+
+                                <div className="grid gap-4 md:grid-cols-3">
+                                    {aboutHighlights.map((item, index) => (
+                                        <motion.div
+                                            key={item.title}
+                                            whileHover={{ y: -6, scale: 1.01 }}
+                                            transition={{ type: "spring", stiffness: 200, damping: 12 }}
+                                            className="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900/50 p-4"
+                                            style={{
+                                                boxShadow: "0 10px 40px rgba(0,0,0,0.35)",
+                                            }}
+                                        >
+                                            <div className={`absolute inset-0 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100 bg-gradient-to-br ${item.gradient}`} />
+                                            <div className="relative flex items-start gap-3">
+                                                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-zinc-700/70 bg-zinc-900/70 shadow-inner">
+                                                    {item.icon}
+                                                </div>
+                                                <div className="space-y-1">
+                                                    <h3 className="text-sm font-semibold text-zinc-100">{item.title}</h3>
+                                                    <p className="text-xs leading-relaxed text-zinc-300">{item.description}</p>
+                                                </div>
+                                            </div>
+                                            <motion.div
+                                                className="mt-4 h-1 rounded-full bg-gradient-to-r from-purple-400/80 via-cyan-400/80 to-emerald-400/80"
+                                                initial={{ scaleX: 0, originX: 0 }}
+                                                whileInView={{ scaleX: 1 }}
+                                                viewport={{ once: true }}
+                                                transition={{ delay: 0.1 * index + 0.1, duration: 0.5 }}
+                                            />
+                                        </motion.div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div id="skills" className="relative space-y-6 rounded-3xl border border-zinc-800 bg-gradient-to-br from-[#0b0b14]/80 via-[#0c0c1c]/80 to-[#0a0a10]/80 p-6 shadow-[0_0_80px_rgba(56,189,248,0.18)]">
+                                <div className="pointer-events-none absolute -left-14 top-4 h-40 w-40 rounded-full bg-purple-600/20 blur-3xl" />
+                                <div className="pointer-events-none absolute -right-10 bottom-6 h-32 w-32 rounded-full bg-emerald-500/20 blur-3xl" />
+
+                                <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+                                    <div className="space-y-2">
+                                        <h2 className="text-xl font-semibold text-zinc-50">
+                                            Skills &amp; Tools
+                                        </h2>
+                                        <p className="max-w-3xl text-sm leading-relaxed text-zinc-300">
+                                            Systems thinking meets hands-on execution. I design automation stacks, connect the data, and keep the guardrails in place so teams can ship confidently.
+                                        </p>
+                                    </div>
+                                    <motion.div
+                                        whileHover={{ scale: 1.03 }}
+                                        transition={{ type: "spring", stiffness: 220, damping: 12 }}
+                                        className="relative inline-flex items-center gap-2 rounded-full border border-sky-400/40 bg-sky-500/10 px-4 py-2 text-xs font-medium uppercase tracking-[0.08em] text-sky-100"
+                                    >
+                                        <span className="flex h-2 w-2 rounded-full bg-sky-300 shadow-[0_0_0_6px_rgba(56,189,248,0.35)]" />
+                                        Automation-first, human-centered
+                                    </motion.div>
+                                </div>
+
+                                <div className="grid gap-4 md:grid-cols-2">
+                                    <div className="space-y-3 rounded-2xl border border-zinc-800/70 bg-zinc-900/50 p-4 shadow-inner">
+                                        <h3 className="text-sm font-semibold text-zinc-100">What I build</h3>
+                                        <p className="text-sm leading-relaxed text-zinc-300">
+                                            Workflow architectures that blend no-code and code, keeping data accurate across CRMs, finance, and messaging tools. Every flow ships with clear ownership and documented handoffs.
+                                        </p>
+                                        <div className="flex flex-wrap gap-2 text-[11px] text-zinc-200">
+                                            <span className="rounded-full bg-purple-500/15 px-3 py-1 font-medium text-purple-100">Orchestrations</span>
+                                            <span className="rounded-full bg-emerald-500/15 px-3 py-1 font-medium text-emerald-100">APIs &amp; Webhooks</span>
+                                            <span className="rounded-full bg-sky-500/15 px-3 py-1 font-medium text-sky-100">Messaging</span>
+                                            <span className="rounded-full bg-amber-500/15 px-3 py-1 font-medium text-amber-100">Analytics</span>
+                                        </div>
+                                    </div>
+
+                                    <div className="relative overflow-hidden rounded-2xl border border-zinc-800/70 bg-gradient-to-br from-indigo-500/10 via-sky-500/10 to-emerald-400/10 p-4">
+                                        <div className="absolute -right-8 -top-10 h-24 w-24 rounded-full bg-sky-500/20 blur-2xl" />
+                                        <div className="absolute -left-10 bottom-0 h-24 w-24 rounded-full bg-emerald-400/20 blur-2xl" />
+                                        <div className="relative space-y-2">
+                                            <h3 className="text-sm font-semibold text-zinc-100">How I keep it safe</h3>
+                                            <ul className="space-y-2 text-sm text-zinc-300">
+                                                <li className="flex items-start gap-2">
+                                                    <span className="mt-1 h-2 w-2 rounded-full bg-purple-300" />
+                                                    QA checklists, test accounts, and alerting for every release.
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="mt-1 h-2 w-2 rounded-full bg-emerald-300" />
+                                                    Fallbacks and retries when APIs misbehave.
+                                                </li>
+                                                <li className="flex items-start gap-2">
+                                                    <span className="mt-1 h-2 w-2 rounded-full bg-amber-300" />
+                                                    Runbooks and docs that make ownership clear after launch.
+                                                </li>
+                                            </ul>
+                                            <motion.div
+                                                animate={{ y: [0, -6, 0] }}
+                                                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                                                className="mt-3 inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3 py-1 text-[11px] font-medium text-emerald-100"
+                                            >
+                                                <span className="h-1.5 w-1.5 rounded-full bg-emerald-300" />
+                                                Safe experimentation beats fragile hacks
+                                            </motion.div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="grid gap-4 md:grid-cols-3">
+                                    {skillHighlights.map((item, index) => (
+                                        <motion.div
+                                            key={item.title}
+                                            whileHover={{ y: -6, scale: 1.01 }}
+                                            transition={{ type: "spring", stiffness: 200, damping: 12 }}
+                                            className="group relative overflow-hidden rounded-2xl border border-zinc-800/80 bg-zinc-900/50 p-4"
+                                            style={{
+                                                boxShadow: "0 10px 40px rgba(0,0,0,0.35)",
+                                            }}
+                                        >
+                                            <div className={`absolute inset-0 opacity-0 blur-2xl transition duration-500 group-hover:opacity-100 bg-gradient-to-br ${item.gradient}`} />
+                                            <div className="relative flex items-start gap-3">
+                                                <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-zinc-700/70 bg-zinc-900/70 shadow-inner">
+                                                    {item.icon}
+                                                </div>
+                                                <div className="space-y-1">
+                                                    <h3 className="text-sm font-semibold text-zinc-100">{item.title}</h3>
+                                                    <p className="text-xs leading-relaxed text-zinc-300">{item.description}</p>
+                                                </div>
+                                            </div>
+                                            <motion.div
+                                                className="mt-4 h-1 rounded-full bg-gradient-to-r from-sky-400/80 via-emerald-400/80 to-purple-400/80"
+                                                initial={{ scaleX: 0, originX: 0 }}
+                                                whileInView={{ scaleX: 1 }}
+                                                viewport={{ once: true }}
+                                                transition={{ delay: 0.1 * index + 0.1, duration: 0.5 }}
+                                            />
+                                        </motion.div>
+                                    ))}
+                                </div>
+
+                                <div className="space-y-3">
+                                    <div className="flex items-center justify-between">
+                                        <h3 className="text-sm font-semibold text-zinc-100">Toolbox</h3>
+                                        <span className="text-xs text-zinc-400">APIs, no-code, and AI that play nicely together.</span>
+                                    </div>
+                                    <div className="grid gap-3 md:grid-cols-3">
+                                        {toolIcons.map((tool) => (
+                                            <MagneticHover key={tool.name} className="block">
+                                                <div className="group relative flex items-start gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4 shadow-[0_10px_30px_rgba(0,0,0,0.35)]">
+                                                    <div className={`relative flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl border border-zinc-700/70 bg-gradient-to-br ${tool.gradient}`}>
+                                                        <div className="absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-70 bg-white/10" />
+                                                        <div className="relative">{tool.icon}</div>
+                                                    </div>
+                                                    <div className="space-y-1">
+                                                        <p className="text-sm font-semibold text-zinc-100">{tool.name}</p>
+                                                        <p className="text-xs text-zinc-300">{tool.description}</p>
+                                                    </div>
+                                                </div>
+                                            </MagneticHover>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </motion.section>
-
                 {/* EXPERIENCE */}
                 <motion.section
                     id="experience"
