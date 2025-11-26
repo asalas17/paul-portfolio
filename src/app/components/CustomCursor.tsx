@@ -10,7 +10,7 @@ export default function CustomCursor() {
   const [hasFinePointer, setHasFinePointer] = useState(false);
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
-  const animationFrame = useRef<number>();
+  const animationFrame = useRef<number | null>(null);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(pointer: fine)");
