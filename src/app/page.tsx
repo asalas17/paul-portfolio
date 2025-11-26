@@ -74,10 +74,10 @@ export default function Home() {
       });
     };
 
-    scrollContainer.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
-      scrollContainer.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("wheel", handleWheel);
     };
   }, []);
 
