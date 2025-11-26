@@ -27,15 +27,19 @@ export default function CustomCursor() {
       targetY = event.clientY;
 
       if (dot) {
-        dot.style.transform = `translate3d(${targetX}px, ${targetY}px, 0)`;
+        dot.style.transform = `translate3d(${targetX}px, ${targetY}px, 0) translate(-50%, -50%)`;
       }
     };
 
+    let isPointerDown = false;
+
     const handlePointerDown = () => {
+      isPointerDown = true;
       ring?.classList.add(ACTIVE_CLASS);
     };
 
     const handlePointerUp = () => {
+      isPointerDown = false;
       ring?.classList.remove(ACTIVE_CLASS);
     };
 
@@ -44,7 +48,8 @@ export default function CustomCursor() {
       currentY += (targetY - currentY) * 0.18;
 
       if (ring) {
-        ring.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
+        const scale = isPointerDown ? 0.9 : 1;
+        ring.style.transform = `translate3d(${currentX}px, ${currentY}px, 0) translate(-50%, -50%) scale(${scale})`;
       }
 
       animationFrame.current = requestAnimationFrame(render);
