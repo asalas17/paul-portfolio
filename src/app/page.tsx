@@ -91,7 +91,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-[#050509] text-zinc-100 overflow-y-auto overflow-x-hidden md:overflow-x-auto md:overflow-y-hidden scroll-smooth">
+    <main className="min-h-dvh bg-[#050509] text-zinc-100 overflow-hidden scroll-smooth">
       <CustomCursor />
       {/* Background gradient */}
       <div className="pointer-events-none fixed inset-0 -z-10 bg-gradient-to-br from-[#050509] via-[#050509] to-[#050509]" />
@@ -138,7 +138,7 @@ export default function Home() {
 
       <div
         ref={scrollContainerRef}
-        className="flex min-h-screen flex-col overflow-y-auto px-4 pb-12 pt-28 md:flex-row md:snap-x md:snap-mandatory md:overflow-x-auto md:overflow-y-hidden md:px-8"
+        className="flex min-h-dvh flex-col overflow-y-auto overflow-x-hidden px-4 pb-8 pt-28 md:h-dvh md:flex-row md:snap-x md:snap-mandatory md:overflow-x-auto md:overflow-y-hidden md:pb-0 md:px-8 md:[touch-action:pan-x]"
       >
         {/* HERO */}
         <section className="relative flex min-h-[75vh] w-screen shrink-0 items-center justify-center snap-center md:min-h-screen">
