@@ -32,8 +32,8 @@ body {
 }
 
 @media (pointer: fine) {
-  body {
-    cursor: none;
+  * {
+    cursor: none !important;
   }
 }
 
