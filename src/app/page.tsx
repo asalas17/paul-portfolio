@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { motion, useMotionValue, useReducedMotion, useTransform } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CustomCursor from "./components/CustomCursor";
+import MagneticHover from "./components/MagneticHover";
 
 const heroVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -175,28 +176,34 @@ export default function Home() {
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <a
-                href="#contact"
-                className="rounded-full border border-purple-400/70 bg-purple-500/20 px-5 py-2 text-sm font-medium text-purple-100 backdrop-blur-md hover:border-purple-300 hover:bg-purple-500/30"
-              >
-                Contact Me
-              </a>
-              <a
-                href="https://pjcohen.com"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-zinc-700 px-5 py-2 text-sm font-medium text-zinc-100 hover:border-zinc-500 hover:bg-zinc-800/60"
-              >
-                View Resume
-              </a>
-              <a
-                href="https://www.linkedin.com/in/pjcohen/"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-full border border-zinc-700 px-5 py-2 text-sm font-medium text-zinc-100 hover:border-zinc-500 hover:bg-zinc-800/60"
-              >
-                LinkedIn
-              </a>
+              <MagneticHover className="inline-block">
+                <a
+                  href="#contact"
+                  className="rounded-full border border-purple-400/70 bg-purple-500/20 px-5 py-2 text-sm font-medium text-purple-100 backdrop-blur-md hover:border-purple-300 hover:bg-purple-500/30"
+                >
+                  Contact Me
+                </a>
+              </MagneticHover>
+              <MagneticHover className="inline-block">
+                <a
+                  href="https://pjcohen.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-zinc-700 px-5 py-2 text-sm font-medium text-zinc-100 hover:border-zinc-500 hover:bg-zinc-800/60"
+                >
+                  View Resume
+                </a>
+              </MagneticHover>
+              <MagneticHover className="inline-block">
+                <a
+                  href="https://www.linkedin.com/in/pjcohen/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="rounded-full border border-zinc-700 px-5 py-2 text-sm font-medium text-zinc-100 hover:border-zinc-500 hover:bg-zinc-800/60"
+                >
+                  LinkedIn
+                </a>
+              </MagneticHover>
             </div>
 
             <div className="mt-4 flex flex-wrap gap-2 text-xs text-zinc-400">
@@ -296,12 +303,11 @@ export default function Home() {
                 "AI Video & Creative Automation",
                 "Cross-Team Collaboration",
               ].map((skill) => (
-                <div
-                  key={skill}
-                  className="rounded-2xl border border-zinc-800 bg-zinc-900/40 px-4 py-3 text-sm text-zinc-200"
-                >
-                  {skill}
-                </div>
+                <MagneticHover key={skill} className="inline-block">
+                  <div className="rounded-2xl border border-zinc-800 bg-zinc-900/40 px-4 py-3 text-sm text-zinc-200">
+                    {skill}
+                  </div>
+                </MagneticHover>
               ))}
             </div>
           </div>
@@ -324,78 +330,82 @@ export default function Home() {
 
             <div className="relative space-y-6 border-l border-zinc-800 pl-6">
               {/* Item 1 */}
-              <article className="space-y-2">
-                <div className="absolute -left-[9px] mt-1 h-4 w-4 rounded-full border border-purple-300 bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.9)]" />
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <div>
-                    <h3 className="text-sm font-semibold text-zinc-50">
-                      Operations &amp; AI Automation Lead
-                    </h3>
-                    <p className="text-xs text-zinc-400">
-                      CitizenShipper · Feb 2025 – Present
-                    </p>
+              <MagneticHover className="block">
+                <article className="space-y-2">
+                  <div className="absolute -left-[9px] mt-1 h-4 w-4 rounded-full border border-purple-300 bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.9)]" />
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div>
+                      <h3 className="text-sm font-semibold text-zinc-50">
+                        Operations &amp; AI Automation Lead
+                      </h3>
+                      <p className="text-xs text-zinc-400">
+                        CitizenShipper · Feb 2025 – Present
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <ul className="space-y-1 text-sm text-zinc-300">
-                  <li>
-                    Built automations using n8n, Zapier, Make, and custom API
-                    integrations.
-                  </li>
-                  <li>
-                    Designed workflow systems for syncing data, triggering
-                    notifications, and supporting Operations, Customer Success, and
-                    Marketing.
-                  </li>
-                  <li>
-                    Created AI-generated videos and creative assets for campaigns.
-                  </li>
-                  <li>
-                    Automated review ingestion, background checks, CRM updates, and
-                    communication workflows.
-                  </li>
-                  <li>
-                    Deployed automation solutions that save an estimated 20–40 hours
-                    per month.
-                  </li>
-                  <li>
-                    Frequently took ownership of complex problems and delivered
-                    solutions end-to-end.
-                  </li>
-                </ul>
-              </article>
+                  <ul className="space-y-1 text-sm text-zinc-300">
+                    <li>
+                      Built automations using n8n, Zapier, Make, and custom API
+                      integrations.
+                    </li>
+                    <li>
+                      Designed workflow systems for syncing data, triggering
+                      notifications, and supporting Operations, Customer Success, and
+                      Marketing.
+                    </li>
+                    <li>
+                      Created AI-generated videos and creative assets for campaigns.
+                    </li>
+                    <li>
+                      Automated review ingestion, background checks, CRM updates, and
+                      communication workflows.
+                    </li>
+                    <li>
+                      Deployed automation solutions that save an estimated 20–40 hours
+                      per month.
+                    </li>
+                    <li>
+                      Frequently took ownership of complex problems and delivered
+                      solutions end-to-end.
+                    </li>
+                  </ul>
+                </article>
+              </MagneticHover>
 
               {/* Item 2 */}
-              <article className="space-y-2">
-                <div className="absolute -left-[9px] mt-[5.5rem] h-4 w-4 rounded-full border border-zinc-500 bg-zinc-900" />
-                <div className="flex flex-wrap items-center justify-between gap-2">
-                  <div>
-                    <h3 className="text-sm font-semibold text-zinc-50">
-                      CS Operations
-                    </h3>
-                    <p className="text-xs text-zinc-400">
-                      CitizenShipper · Oct 2023 – Apr 2025
-                    </p>
+              <MagneticHover className="block">
+                <article className="space-y-2">
+                  <div className="absolute -left-[9px] mt-[5.5rem] h-4 w-4 rounded-full border border-zinc-500 bg-zinc-900" />
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div>
+                      <h3 className="text-sm font-semibold text-zinc-50">
+                        CS Operations
+                      </h3>
+                      <p className="text-xs text-zinc-400">
+                        CitizenShipper · Oct 2023 – Apr 2025
+                      </p>
+                    </div>
                   </div>
-                </div>
-                <ul className="space-y-1 text-sm text-zinc-300">
-                  <li>
-                    Supported customers across inbound and outbound communication
-                    channels.
-                  </li>
-                  <li>
-                    Helped maintain long-term customer relationships with clear,
-                    personalized assistance.
-                  </li>
-                  <li>
-                    Connected everyday support needs with internal tools and
-                    processes to keep workflows running smoothly.
-                  </li>
-                  <li>
-                    Collaborated with cross-functional teams to surface feedback and
-                    identify opportunities for process improvement.
-                  </li>
-                </ul>
-              </article>
+                  <ul className="space-y-1 text-sm text-zinc-300">
+                    <li>
+                      Supported customers across inbound and outbound communication
+                      channels.
+                    </li>
+                    <li>
+                      Helped maintain long-term customer relationships with clear,
+                      personalized assistance.
+                    </li>
+                    <li>
+                      Connected everyday support needs with internal tools and
+                      processes to keep workflows running smoothly.
+                    </li>
+                    <li>
+                      Collaborated with cross-functional teams to surface feedback and
+                      identify opportunities for process improvement.
+                    </li>
+                  </ul>
+                </article>
+              </MagneticHover>
             </div>
           </div>
         </motion.section>
@@ -415,33 +425,37 @@ export default function Home() {
               Selected Automation Work
             </h2>
             <div className="grid gap-4 md:grid-cols-2">
-              <div className="flex flex-col gap-3 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-5">
-                <h3 className="text-sm font-semibold text-zinc-50">
-                  Automated Lead Qualification &amp; Routing
-                </h3>
-                <p className="text-sm text-zinc-300">
-                  Designed an n8n-based workflow that scored inbound leads,
-                  enriched them via API, and routed them to the right team with
-                  automated notifications.
-                </p>
-                <p className="text-xs text-zinc-400">
-                  Tools: n8n, REST APIs, CRM, notifications
-                </p>
-              </div>
+              <MagneticHover className="h-full">
+                <div className="flex h-full flex-col gap-3 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-5">
+                  <h3 className="text-sm font-semibold text-zinc-50">
+                    Automated Lead Qualification &amp; Routing
+                  </h3>
+                  <p className="text-sm text-zinc-300">
+                    Designed an n8n-based workflow that scored inbound leads,
+                    enriched them via API, and routed them to the right team with
+                    automated notifications.
+                  </p>
+                  <p className="text-xs text-zinc-400">
+                    Tools: n8n, REST APIs, CRM, notifications
+                  </p>
+                </div>
+              </MagneticHover>
 
-              <div className="flex flex-col gap-3 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-5">
-                <h3 className="text-sm font-semibold text-zinc-50">
-                  Review &amp; Safety Signal Pipeline
-                </h3>
-                <p className="text-sm text-zinc-300">
-                  Built an automation that ingests reviews, runs background checks,
-                  and surfaces key signals to Operations and Customer Success for
-                  faster decisions.
-                </p>
-                <p className="text-xs text-zinc-400">
-                  Tools: Make.com, APIs, internal dashboards
-                </p>
-              </div>
+              <MagneticHover className="h-full">
+                <div className="flex h-full flex-col gap-3 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-5">
+                  <h3 className="text-sm font-semibold text-zinc-50">
+                    Review &amp; Safety Signal Pipeline
+                  </h3>
+                  <p className="text-sm text-zinc-300">
+                    Built an automation that ingests reviews, runs background checks,
+                    and surfaces key signals to Operations and Customer Success for
+                    faster decisions.
+                  </p>
+                  <p className="text-xs text-zinc-400">
+                    Tools: Make.com, APIs, internal dashboards
+                  </p>
+                </div>
+              </MagneticHover>
             </div>
           </div>
         </motion.section>
