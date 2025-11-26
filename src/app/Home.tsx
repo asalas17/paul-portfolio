@@ -116,6 +116,7 @@ export default function Home() {
     const mouseX = useMotionValue(0.5);
     const mouseY = useMotionValue(0.5);
     const scrollContainerRef = useRef<HTMLDivElement>(null);
+    const experienceScrollRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(pointer: fine)");
@@ -184,13 +185,29 @@ export default function Home() {
     }, [ready]); // 👈 AHORA SE ACTIVA SOLO CUANDO ready = true
 
 
-    const handleNavClick = (event: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    const handleNavClick = (event: React.MouseEvent<HTMLElement>, id: string) => {
         event.preventDefault();
         document.getElementById(id)?.scrollIntoView({
             behavior: "smooth",
             inline: "center",
             block: "nearest",
         });
+    };
+
+    const handleExperienceWheel = (event: React.WheelEvent<HTMLDivElement>) => {
+        const panel = experienceScrollRef.current;
+        if (!panel) return;
+
+        const canScrollVertically = panel.scrollHeight > panel.clientHeight + 1;
+        if (!canScrollVertically) return;
+
+        const atTop = panel.scrollTop <= 0;
+        const atBottom = panel.scrollTop + panel.clientHeight >= panel.scrollHeight - 1;
+        const scrollingDown = event.deltaY > 0;
+
+        if ((scrollingDown && !atBottom) || (!scrollingDown && !atTop)) {
+            event.stopPropagation();
+        }
     };
 
     // Evita mismatch PERO mantiene el árbol DOM
@@ -215,8 +232,8 @@ export default function Home() {
                 className="fixed inset-x-4 bottom-4 z-20 mx-auto flex max-w-xl items-center gap-3 rounded-full border border-zinc-800 bg-zinc-900/80 px-4 py-3 text-sm shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-md md:inset-x-0 md:bottom-auto md:left-0 md:right-0 md:top-4 md:max-w-6xl md:justify-between md:rounded-2xl md:border-zinc-800 md:bg-zinc-900/40 md:px-6 md:py-5"
                 style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}
             >
-                <span
-                    onClick={(e) => handleNavClick(e as any, "hero")}
+                    <span
+                        onClick={(e) => handleNavClick(e, "hero")}
                     className="hidden text-sm uppercase tracking-[0.2em] text-zinc-400 hover:text-zinc-200 transition cursor-pointer md:inline"
                 >
                     Paul Cohen
@@ -698,7 +715,11 @@ export default function Home() {
     md:items-center
   "
                 >
-                    <div className="mx-auto flex w-full max-w-4xl flex-col gap-6 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 backdrop-blur-md md:p-8">
+                    <div
+                        ref={experienceScrollRef}
+                        onWheel={handleExperienceWheel}
+                        className="mx-auto flex w-full max-w-4xl flex-col gap-6 rounded-3xl border border-zinc-800 bg-zinc-900/40 p-6 backdrop-blur-md md:max-h-[80vh] md:overflow-y-auto md:p-8 md:pr-10 md:[scrollbar-width:thin] md:[scrollbar-color:rgba(255,255,255,0.18)_transparent] md:[&::-webkit-scrollbar]:w-1.5 md:[&::-webkit-scrollbar-track]:bg-transparent md:[&::-webkit-scrollbar-thumb]:bg-[rgba(255,255,255,0.25)] md:[&::-webkit-scrollbar-thumb]:rounded-full md:hover:[&::-webkit-scrollbar-thumb]:bg-[rgba(255,255,255,0.35)]"
+                    >
                         <h2 className="text-lg font-semibold text-zinc-50">
                             Experience
                         </h2>
