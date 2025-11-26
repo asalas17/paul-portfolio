@@ -106,36 +106,42 @@ export default function Home() {
         <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-sky-600 blur-3xl" />
       </div>
 
-      <header className="fixed left-0 right-0 top-0 z-20 mx-auto flex max-w-6xl items-center justify-between px-6 py-6 backdrop-blur-sm">
-        <span className="text-sm uppercase tracking-[0.2em] text-zinc-400">
+      <header
+        className="fixed inset-x-4 bottom-4 z-20 mx-auto flex max-w-xl items-center gap-3 rounded-full border border-zinc-800 bg-zinc-900/80 px-4 py-3 text-sm shadow-[0_20px_60px_rgba(0,0,0,0.45)] backdrop-blur-md md:inset-x-0 md:bottom-auto md:left-0 md:right-0 md:top-4 md:max-w-6xl md:justify-between md:rounded-2xl md:border-zinc-800 md:bg-zinc-900/40 md:px-6 md:py-5"
+        style={{ paddingBottom: "calc(0.75rem + env(safe-area-inset-bottom))" }}
+      >
+        <span className="hidden text-sm uppercase tracking-[0.2em] text-zinc-400 md:inline">
           Paul Cohen
         </span>
-        <nav className="flex items-center gap-6 text-sm text-zinc-300">
+        <nav
+          aria-label="Primary"
+          className="flex w-full items-center gap-2 text-sm font-medium text-zinc-200 md:w-auto md:gap-6 md:font-normal md:text-zinc-300"
+        >
           <a
             href="#about"
             onClick={(event) => handleNavClick(event, "about")}
-            className="hover:text-white"
+            className="flex flex-1 items-center justify-center rounded-full bg-zinc-800/60 px-3 py-2 transition hover:bg-zinc-800/80 hover:text-white md:flex-none md:bg-transparent md:px-0 md:py-0 md:hover:bg-transparent"
           >
             About
           </a>
           <a
             href="#experience"
             onClick={(event) => handleNavClick(event, "experience")}
-            className="hover:text-white"
+            className="flex flex-1 items-center justify-center rounded-full bg-zinc-800/60 px-3 py-2 transition hover:bg-zinc-800/80 hover:text-white md:flex-none md:bg-transparent md:px-0 md:py-0 md:hover:bg-transparent"
           >
             Experience
           </a>
           <a
             href="#projects"
             onClick={(event) => handleNavClick(event, "projects")}
-            className="hover:text-white"
+            className="flex flex-1 items-center justify-center rounded-full bg-zinc-800/60 px-3 py-2 transition hover:bg-zinc-800/80 hover:text-white md:flex-none md:bg-transparent md:px-0 md:py-0 md:hover:bg-transparent"
           >
             Projects
           </a>
           <a
             href="#contact"
             onClick={(event) => handleNavClick(event, "contact")}
-            className="hover:text-white"
+            className="flex flex-1 items-center justify-center rounded-full bg-zinc-800/60 px-3 py-2 transition hover:bg-zinc-800/80 hover:text-white md:flex-none md:bg-transparent md:px-0 md:py-0 md:hover:bg-transparent"
           >
             Contact
           </a>
@@ -144,7 +150,7 @@ export default function Home() {
 
       <div
         ref={scrollContainerRef}
-        className="flex min-h-dvh flex-col overflow-y-auto overflow-x-hidden px-4 pb-8 pt-28 md:h-dvh md:flex-row md:snap-x md:snap-mandatory md:overflow-x-hidden md:overflow-y-hidden md:pb-0 md:px-8 md:[touch-action:pan-x]"
+        className="flex min-h-dvh flex-col overflow-y-auto overflow-x-hidden px-4 pb-[140px] pt-16 md:h-dvh md:flex-row md:snap-x md:snap-mandatory md:overflow-x-hidden md:overflow-y-hidden md:pb-0 md:px-8 md:pt-28 md:[touch-action:pan-x]"
       >
         {/* HERO */}
         <section className="relative flex min-h-[75vh] w-screen shrink-0 items-center justify-center snap-center md:min-h-screen">
