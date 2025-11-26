@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, useMotionValue, useReducedMotion, useTransform } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import CustomCursor from "./components/CustomCursor";
 
 const heroVariants = {
@@ -137,7 +137,7 @@ export default function Home() {
 
       <div
         ref={scrollContainerRef}
-        className="flex min-h-screen flex-col md:flex-row md:snap-x md:snap-mandatory overflow-y-auto md:overflow-y-hidden md:overflow-x-auto px-4 pb-12 pt-28 md:px-8"
+        className="flex min-h-screen flex-col overflow-y-auto px-4 pb-12 pt-28 md:flex-row md:snap-x md:snap-mandatory md:overflow-x-auto md:overflow-y-hidden md:px-8"
       >
         {/* HERO */}
         <section className="relative flex min-h-[75vh] w-screen shrink-0 items-center justify-center snap-center md:min-h-screen">
