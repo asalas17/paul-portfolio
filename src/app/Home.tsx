@@ -636,7 +636,7 @@ export default function Home() {
                                 src="/paul.png"
                                 alt="Portrait of Paul Cohen"
                                 fill
-                                className="object-cover"
+                                className="object-cover object-top"
                                 priority
                             />
                             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050509] via-transparent" />
