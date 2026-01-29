@@ -633,7 +633,7 @@ export default function Home() {
                             className="relative mx-auto h-64 w-64 overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900/60 shadow-[0_0_60px_rgba(147,51,234,0.3)] sm:h-72 sm:w-72"
                         >
                             <Image
-                                src="/paul.jpg"
+                                src="/paul.png"
                                 alt="Portrait of Paul Cohen"
                                 fill
                                 className="object-cover"
