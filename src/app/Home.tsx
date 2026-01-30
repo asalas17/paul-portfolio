@@ -588,7 +588,7 @@ export default function Home() {
                                 </MagneticHover>
                                 <MagneticHover className="inline-block">
                                     <a
-                                        href="https://pjcohen.com"
+                                        href="/resume.pdf"
                                         target="_blank"
                                         rel="noreferrer"
                                         className="rounded-full border border-zinc-700 px-5 py-2 text-sm font-medium text-zinc-100 hover:border-zinc-500 hover:bg-zinc-800/60"
@@ -606,6 +606,61 @@ export default function Home() {
                                         LinkedIn
                                     </a>
                                 </MagneticHover>
+                            </div>
+
+                            <div className="flex flex-wrap items-center gap-4 rounded-2xl border border-zinc-800/80 bg-gradient-to-r from-purple-500/10 via-indigo-500/10 to-sky-500/10 px-4 py-3 shadow-[0_20px_60px_rgba(0,0,0,0.35)]">
+                                <div className="flex items-center gap-3">
+                                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl border border-purple-400/40 bg-purple-500/20 text-purple-100 shadow-[0_15px_40px_rgba(147,51,234,0.35)]">
+                                        <svg
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-6 w-6"
+                                        >
+                                            <path
+                                                d="M7 4.5h6l4 4V19a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V5.5a1 1 0 0 1 1-1Z"
+                                                stroke="currentColor"
+                                                strokeWidth="1.5"
+                                                strokeLinecap="round"
+                                            />
+                                            <path
+                                                d="M13 4.5V9h4"
+                                                stroke="currentColor"
+                                                strokeWidth="1.5"
+                                                strokeLinecap="round"
+                                            />
+                                            <path
+                                                d="M8.5 12.5h7M8.5 15.5h5"
+                                                stroke="currentColor"
+                                                strokeWidth="1.5"
+                                                strokeLinecap="round"
+                                            />
+                                        </svg>
+                                    </span>
+                                    <div>
+                                        <p className="text-sm font-semibold text-zinc-50">Resume</p>
+                                        <p className="text-xs text-zinc-300">One-click view or download the PDF.</p>
+                                    </div>
+                                </div>
+                                <div className="flex flex-wrap gap-2 sm:ml-auto">
+                                    <a
+                                        href="/resume.pdf"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        className="inline-flex items-center gap-2 rounded-full border border-purple-400/60 bg-purple-500/20 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-purple-100 transition hover:border-purple-300 hover:bg-purple-500/30"
+                                    >
+                                        View
+                                        <span aria-hidden="true">↗</span>
+                                    </a>
+                                    <a
+                                        href="/resume.pdf"
+                                        download
+                                        className="inline-flex items-center gap-2 rounded-full border border-zinc-700 bg-zinc-900/40 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-zinc-100 transition hover:border-zinc-500 hover:bg-zinc-800/60"
+                                    >
+                                        Download
+                                        <span aria-hidden="true">↓</span>
+                                    </a>
+                                </div>
                             </div>
 
                             <div className="mt-4 flex flex-wrap gap-2 text-xs text-zinc-400">
