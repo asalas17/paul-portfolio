@@ -13,8 +13,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Paul Cohen Website",
-  description: "Portfolio website of Paul Cohen.",
+  metadataBase: new URL("https://paulcohen.vercel.app"),
+  title: "Paul Cohen — AI Automation & Operations",
+  description:
+    "Paul Cohen helps SaaS teams turn messy processes into simple, automated workflows with n8n, Zapier, Make, and API integrations.",
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "Paul Cohen — AI Automation & Operations",
+    description:
+      "Good systems. Less friction. Connecting tools, teams, and data to make day-to-day work easier.",
+    url: "/",
+    siteName: "Paul Cohen",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "/paul-linkedin.jpg", alt: "Paul Cohen" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "Paul Cohen — AI Automation & Operations",
+    description:
+      "Helping SaaS teams turn messy processes into simple, automated workflows.",
+    images: ["/paul-linkedin.jpg"],
+  },
 };
 
 export default function RootLayout({
