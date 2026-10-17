@@ -49,6 +49,59 @@ html, body {
   -webkit-overflow-scrolling: touch;
 }
 
+.cursor-dot,
+.cursor-ring {
+  pointer-events: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  z-index: 50;
+  transition: opacity 150ms ease;
+}
+
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff, #c084fc);
+  box-shadow: 0 0 12px rgba(168, 85, 247, 0.4);
+}
+
+.cursor-ring {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(147, 197, 253, 0.5);
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.25);
+  backdrop-filter: blur(8px);
+  transition: opacity 150ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.cursor-ring--active {
+  border-color: rgba(168, 85, 247, 0.8);
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.4);
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  html.custom-cursor-active,
+  html.custom-cursor-active * {
+    cursor: none !important;
+  }
+
+  .custom-cursor-active .cursor-dot,
+  .custom-cursor-active .cursor-ring {
+    opacity: 1;
+  }
+}
+
+@media (pointer: coarse), (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}
+
 
 :focus-visible {
   outline: 2px solid #c084fc;

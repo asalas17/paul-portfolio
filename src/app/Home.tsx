@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, MotionConfig, useMotionValue, useReducedMotion, useTransform } from "framer-motion";
 import React, { useEffect, useRef, useSyncExternalStore } from "react";
 import MagneticHover from "./components/MagneticHover";
+import CustomCursor from "./components/CustomCursor";
 
 const heroVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -369,6 +370,7 @@ export default function Home() {
 
     return (
         <MotionConfig reducedMotion="user">
+        <CustomCursor />
         <a href="#hero" className="skip-link">Skip to content</a>
         <main className="relative min-h-dvh bg-[#050509] text-zinc-100 overflow-hidden scroll-smooth">
             {/* Background gradient */}
