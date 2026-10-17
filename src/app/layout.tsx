@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Paul Cohen — AI Automation & Operations",
     description:
-      "Good systems. Less friction. Connecting tools, teams, and data to make day-to-day work easier.",
+      "Designing end-to-end automations that turn complexity into clarity.",
     url: "/",
     siteName: "Paul Cohen",
     locale: "en_US",
