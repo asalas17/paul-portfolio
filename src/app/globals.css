@@ -361,3 +361,120 @@ h1 span { display: block; color: transparent; background: linear-gradient(100deg
   .tag-list li { font-size: 9px; }
 }
 @media(max-width:380px) { .impact-strip p { font-size: 8px; } .impact-strip p span { font-size: 7px; } }
+
+/* Public case studies use readable, synthetic workflow illustrations. */
+.case-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 24px;
+}
+.case-card {
+  position: relative;
+  min-width: 0;
+  padding: 28px;
+  border: 1px solid #3a304c;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #191526e8, #111623df);
+  box-shadow: 0 12px 40px #0002;
+  scroll-margin-top: 125px;
+}
+.case-card-featured {
+  border-color: #725395;
+  background: linear-gradient(135deg, #231833e8, #121a2bdf);
+}
+.case-card-featured::before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: 28px;
+  right: 28px;
+  height: 2px;
+  background: linear-gradient(90deg, #be9afc, #a6b7ed70, transparent);
+}
+.case-card:focus-within { border-color: #c4a5ff; }
+.case-heading {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  margin-bottom: 18px;
+}
+.case-category {
+  margin: 0;
+  color: #c3acd9;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 11px;
+  line-height: 1.6;
+  letter-spacing: .35px;
+}
+.case-status {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #7b699545;
+  border-radius: 999px;
+  padding: 4px 9px;
+  background: #8b5cf610;
+  color: #d3c1e8;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.case-status-deployed { color: #bbe4d7; border-color: #6eaa9455; background: #2b826019; }
+.case-status-pilot { color: #c2d6ff; border-color: #7799d055; background: #457bb319; }
+.case-status-review, .case-status-partial { color: #e1c99f; border-color: #b59b6655; background: #9c743d19; }
+.case-card h3 { font-size: 25px; line-height: 1.24; letter-spacing: -.7px; margin-bottom: 13px; }
+.case-summary { color: #cec7df; font-size: 15px; line-height: 1.7; margin-bottom: 20px; }
+.case-facts { margin: 0 0 20px; display: grid; gap: 12px; }
+.case-facts dt { color: #b8a5d0; font-size: 11px; line-height: 1.5; margin-bottom: 4px; }
+.case-facts dd { margin: 0; color: #c8c2d7; font-size: 14px; line-height: 1.65; }
+.case-tools { display: flex; flex-wrap: wrap; gap: 7px; list-style: none; padding: 0; margin: 0; }
+.case-tools li { border: 1px solid #8c70ac50; border-radius: 999px; background: #8b5cf60a; color: #cbb9e1; padding: 5px 9px; font-size: 11px; line-height: 1.5; }
+.case-workflow { margin: 23px 0 0; padding: 18px 16px 15px; border: 1px solid #76608b50; border-radius: 15px; background: linear-gradient(135deg, #251d35a8, #192339a0); }
+.case-workflow figcaption { color: #cfb8eb; font-family: var(--font-geist-mono), monospace; font-size: 12px; line-height: 1.5; }
+.case-flow { list-style: none; margin: 17px 0 14px; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.case-flow li { position: relative; min-width: 0; min-height: 78px; padding: 10px 6px; display: flex; flex-direction: column; justify-content: center; gap: 6px; border: 1px solid #8c70ac50; border-radius: 8px; background: #2a223b; color: #d7c9e8; font-size: 12px; line-height: 1.45; text-align: center; overflow-wrap: anywhere; }
+.case-flow li + li::before { content: "→"; position: absolute; left: -13px; top: 50%; transform: translateY(-50%); color: #bca1d8; font-size: 14px; }
+.case-flow .case-flow-control { border-color: #c4a5ff90; background: linear-gradient(130deg, #4d3265, #303c64); color: #f2e5ff; }
+.case-flow-number { color: #b39acb; font-family: var(--font-geist-mono), monospace; font-size: 10px; }
+.case-illustration-note { margin: 0; color: #b1a5c2; font-size: 12px; line-height: 1.5; }
+.case-details { margin-top: 18px; border-top: 1px solid #78618b45; }
+.case-details summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 48px; margin-top: 5px; padding: 10px 3px; border-radius: 6px; list-style: none; cursor: pointer; color: #dfcaff; font-size: 14px; font-weight: 550; }
+.case-details summary::-webkit-details-marker { display: none; }
+.case-details summary:hover { color: #f2e7ff; background: #a78bfa0a; }
+.case-details summary:focus-visible { outline: 3px solid #c4a5ff; outline-offset: 4px; }
+.case-details summary svg { transition: transform .2s ease; }
+.case-details[open] summary svg { transform: rotate(180deg); }
+.case-close-label, .case-details[open] .case-read-label { display: none; }
+.case-details[open] .case-close-label { display: inline; }
+.case-detail-content { display: grid; gap: 19px; padding-top: 16px; padding-bottom: 7px; }
+.case-detail-content h4 { margin: 0 0 6px; color: #e5d6f9; font-size: 13px; line-height: 1.5; font-weight: 550; }
+.case-detail-content p { margin: 0; color: #bfb6d0; font-size: 14px; line-height: 1.75; }
+.case-visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 1050px) {
+  .case-grid { gap: 20px; }
+  .case-card { padding: 23px; }
+  .case-flow { gap: 11px; }
+  .case-flow li { padding-inline: 4px; }
+  .case-flow li + li::before { left: -11px; font-size: 12px; }
+}
+@media (max-width: 900px) {
+  .case-grid { grid-template-columns: minmax(0, 1fr); }
+  .case-card { padding: 28px; }
+  .case-flow li { min-height: 65px; padding: 10px; }
+}
+@media (max-width: 600px) {
+  .case-grid { gap: 20px; }
+  .case-card { padding: 23px 21px; border-radius: 22px; scroll-margin-top: 165px; }
+  .case-heading { gap: 9px; margin-bottom: 16px; }
+  .case-category, .case-status { font-size: 11px; }
+  .case-card h3 { font-size: 24px; }
+  .case-summary { font-size: 15px; }
+  .case-facts dd, .case-detail-content p { font-size: 14px; }
+  .case-workflow { padding: 17px 15px 15px; }
+  .case-flow { grid-template-columns: minmax(0, 1fr); gap: 10px; margin-block: 15px; }
+  .case-flow li { flex-direction: row; align-items: center; justify-content: flex-start; gap: 12px; min-height: 38px; padding: 8px 12px; font-size: 13px; text-align: left; }
+  .case-flow li + li::before { content: "↓"; left: 20px; top: -12px; transform: none; font-size: 12px; }
+  .case-flow-number { font-size: 11px; }
+  .case-details summary { min-height: 48px; }
+}
+@media (prefers-reduced-motion: reduce) { .case-details summary svg { transition: none; } }
