@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://paulcohen.vercel.app"),
+  metadataBase: new URL("https://paulc.dev"),
   title: "Paul Cohen — AI Automation & Operations",
   description:
     "Paul Cohen helps SaaS teams turn messy processes into simple, automated workflows with n8n, Zapier, Make, and API integrations.",

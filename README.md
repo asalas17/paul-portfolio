@@ -29,8 +29,16 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deploy on Cloudflare
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Production runs on the Cloudflare Worker `paul-portfolio` at [paulc.dev](https://paulc.dev), the canonical domain. The current production release was uploaded directly to Cloudflare; automatic GitHub-to-Cloudflare builds are not configured.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+With dependencies installed and an existing Cloudflare login that can access this Worker, run:
+
+```bash
+npx wrangler deploy
+```
+
+`wrangler.jsonc` runs `npm run build` to export the site, then deploys the static files in `./out`. It also configures `paulc.dev` and `www.paulc.dev` as custom domains. Use `npx wrangler login` first if needed.
+
+`vercel.json` permanently redirects the old `paulcohen.vercel.app` hostname to `https://paulc.dev`, preserving paths and query parameters. This takes effect when a Git push is deployed through the existing GitHub-to-Vercel integration.
